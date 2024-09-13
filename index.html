@@ -1,48 +1,71 @@
 <!DOCTYPE html>
-<html lang="es-GT">
-
+<html lang="en">
 <head>
-
-    <!-- Head -->
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karen y Oscar</title>
 
-    <meta name="robots" content="noindex, nofollow" />
-
-    <meta name="color-scheme" content="light only">
-
-    <title>Boda de Karen y Oscar</title>
-
-
-
-    <!-- Listado de css con version dinamica segun modificacion de archivo -->
-    <link rel='stylesheet' href="css/bootstrap.css">
-    <link rel='stylesheet' href="css/slick.css">
-    <link rel='stylesheet' href="css/slick-theme.css">
-    <link rel='stylesheet' href="css/jquery.fancybox.min.css">
-    <link rel='stylesheet' href="css/addEvent.css">
-    <link rel='stylesheet' href="css/style.css">
-    <link rel='stylesheet' href="css/responsive.css">
-
-    <!-- Color para navegadores moviles -->
-    <meta name="theme-color" content="#C6D7CF">
+    <!-- Importando CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+     <link rel="stylesheet" href="css/slick.css">
+     <link rel="stylesheet" href="css/slick-theme.css">
+     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+     <link rel="stylesheet" href="css/addEvent.css">
+     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/responsive.css">
 
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Open+Sans:wght@300;400;700&display=swap"
-        rel="stylesheet">
+
+     <!-- Color para el navegador en movile -->
+      <meta name="theme-color" content="#C6D7CF">
+
+      <!-- Font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Open+Sans:wght@300;400;700&display=swap"
+          rel="stylesheet">
+
+      <!-- Animaciones Lottie -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
 
 </head>
+<style>
+    /* Estilos para el parallax */
+.portada {
+  height: 100vh;
+  background-attachment: fixed; /* Efecto Parallax */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.content-portada {
+  z-index: 2; /* Aseguramos que el contenido esté encima del fondo */
+}
+
+.portada::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Oscurece ligeramente la imagen */
+  z-index: 1; /* Fondo oscuro detrás del contenido */
+}
+
+.portada img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
 <body>
 
-
-
     <!-- Loader -->
-    <!-- START PRELOADER AREA-->
     <!-- <div class="preloader-area">
 
         <div class="d-flex justify-content-center align-items-center h-100">
@@ -50,10 +73,10 @@
         </div>
 
     </div> -->
-    <!-- END PRELOADER AREA -->
+     <!-- End Loader -->
 
-    <!-- Modal musica fondo -->
-    <div id="modalMusica" class="modal fade" tabindex="-1">
+     <!-- Modal para habilitar la música -->
+     <!-- <div id="modalMusica" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
 
@@ -72,30 +95,23 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
+      <!-- End modal música -->
+
 
     <!-- Portada -->
-    <section class="portada" >
-
-        <div class="portada-flor-izq-sup"></div>
-
-        <div class="portada-flor-der-inf"></div>
-
-        <div class="portada-flor-izq-inf"></div>
-
+    <section class="portada p-4">
+        <div class="portada-flor-izq-sup" id="portada-flor-izq-sup"></div>
+        <div class="portada-flor-der-inf" id="portada-flor-der-inf"></div>
+        <div class="portada-flor-izq-inf" id="portada-flor-izq-inf"></div>
         <div class="container">
             <div class="row d-flex justify-content-center align-items-center">
-
                 <div class="content-portada text-center">
-
-
-                    <!-- Idiomas -->
-
-
-
+                    <!-- Contenido de la portada -->
                     <div class="box-nombres-fecha-portada">
                         <span class="fecha">
-                            05.10.2024 </span>
+                            05.10.2024 
+                        </span>
                         <h1>
                             Karen <br class="d-md-none">
                             <span>&</span>
@@ -104,71 +120,80 @@
                         </h1>
                         <div class="line"></div>
                     </div>
-
+                    <!-- Mensaje -->
                     <div class="box-frase-portada">
                         <p>
                             <img src="img/comilla-apertura.svg" alt="">
                             No importa lo que pase mañana o el resto de mi vida, ahora soy feliz porque te tengo a ti a mi lado y te amo.
-
                             <img src="img/comilla-cierre.svg" alt="">
                         </p>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="flecha-continuar" style="width: 200px; height: 200px;"></div>
+                        </div>
                     </div>
-
+                    <!-- Finaliza el contenido de la portada -->
+                    <!-- Flecha para bajar -->
                     <div class="d-flex justify-content-center align-items-center">
-                        <div class="flecha-continuar"></div>
+                        <div id="flecha-continuar" style="width: 200px; height: 200px;"></div>
                     </div>
-
+                    <script>
+                        var animation = lottie.loadAnimation({
+                          container: document.getElementById('flecha-continuar'), // ID del contenedor
+                          renderer: 'svg', // Renderizar en SVG
+                          loop: true, // Repetir en bucle
+                          autoplay: true, // Iniciar automáticamente
+                          path: 'source/img/animaciones/scroll-down.json' // Ruta del archivo JSON de la animación
+                        });
+                    </script>
+                    <!--END Flecha para bajar -->
                 </div>
-
             </div>
-
-
-
         </div>
-
     </section>
-    <!-- Cuenta Regresiva -->
+    
+     <!-- End Portada -->
 
-    <section class="cuenta-regresiva">
+     <!-- Cuenta regresiva -->
+     <section class="cuenta-regresiva">
         <div class="container">
             <div class="row d-flex justify-content-center align-items-center">
-
                 <div class="box-aros d-flex justify-content-center align-items-center">
                     <div class="box-circulo text-center">
-
+                    
                         <span class="falta">Falta</span>
-
                         <div id="reloj" class="reloj">
-
                             <div id="dias" class="reloj-col">
                                 <span class="number"></span>
                                 <span class="time">días</span>
                             </div>
-
                             <div id="horas" class="reloj-col">
                                 <span class="number"></span>
                                 <span class="time">hs</span>
                             </div>
-
                             <div id="minutos" class="reloj-col">
                                 <span class="number"></span>
                                 <span class="time">min</span>
                             </div>
-
                             <div id="segundos" class="reloj-col no-border">
                                 <span class="number"></span>
                                 <span class="time">seg</span>
                             </div>
-
                             <div class="clearfix"></div>
-
                         </div>
 
-
                         <div class="d-flex justify-content-center align-items-center">
-
-                            <!-- Corazon -->
-                            <div class="corazon-falta"></div>
+                            <!-- Corazón -->
+                            <div id="corazon-falta" class="corazon-falta"></div>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                  container: document.getElementById('corazon-falta'), // ID del contenedor
+                                  renderer: 'svg', // Renderizar en SVG
+                                  loop: true, // Repetir en bucle
+                                  autoplay: true, // Iniciar automáticamente
+                                  path: 'source/img/animaciones/corazon-falta.json' // Ruta del archivo JSON de la animación
+                                });
+                              </script>
+                              <!-- End corazón -->
 
                         </div>
 
@@ -178,60 +203,58 @@
             </div>
         </div>
     </section>
-    <!-- Ceremonia - Fiesta-->
-    <section class="ceremonia-fiesta">
+     <!-- End cuenta regresiva -->
 
+     <!-- Ceremonia y fiesta -->
+     <section class="ceremonia-fiesta">
         <div class="ceremonia-fiesta-flor-der"></div>
-
-
         <div class="container">
             <div class="row">
 
                 <div class="col-md-6 col-ceremonia text-center">
 
-                    <div class="anim-anillos"></div>
+                    <div class="anim-anillos">
+                        <div id="anim-anillos"></div>
+                    </div>
+                    <script>
+                        var animation = lottie.loadAnimation({
+                          container: document.getElementById('anim-anillos'), // ID del contenedor
+                          renderer: 'svg', // Renderizar en SVG
+                          loop: true, // Repetir en bucle
+                          autoplay: true, // Iniciar automáticamente
+                          path: 'source/img/animaciones/img_ceremonia.json' // Ruta del archivo JSON de la animación
+                        });
+                      </script>
 
                     <br>
-
-                    <h3>
-                        Ceremonia </h3>
-
+                    <h3>Ceremonia</h3>
                     <div class="info-col">
-
                         <div class="info-box">
                             <h6>Día</h6>
-                            <p>Sábado 05 de Octubre - 17hs</p>
+                            <p>Sábado 05 de octubre 2024 - 17hs</p>
                             <a href="#" class="boton addeventatc">
-
                                 <span class="nameBtn">Agendar</span>
-
                                 <span class="start">2024-10-05 17:00:00</span>
                                 <span class="end">2024-10-05 17:00:00</span>
                                 <span class="timezone">America/Guatemala</span>
                                 <span class="title">Boda de Karen y Oscar</span>
-
                             </a>
                         </div>
-
                         <div class="info-box">
                             <h6>Lugar</h6>
                             <p>Cabaña Suiza</p>
                             <a href="#" data-evento="Ceremonia" class="boton confirmar-asistencia">Confirmar
                                 asistencia</a>
                         </div>
-
                         <div class="info-box">
                             <h6>Dirección</h6>
                             <p>Km. 20.8 Carretera a San Lucas Sacatepéquez, Mixco Guatemala, C.A.</p>
                             <a href="#" data-evento="Ceremonia" class="boton modal-como-llegar">¿Cómo llegar?</a>
                         </div>
-
                     </div>
-
                 </div>
 
-<!-- 
-                <div class=" col-md-6 col-fiesta text-center">
+                <!-- <div class=" col-md-6 col-fiesta text-center">
 
                     <div class="anim-fiesta"></div>
 
@@ -244,14 +267,14 @@
 
                         <div class="info-box">
                             <h6>Día</h6>
-                            <p>Sábado 15 de Mayo - 20hs</p>
+                            <p>Sábado 05 de octubre 2024 - 20hs</p>
                             <a href="#" class="boton addeventatc">
                                 <span class="nameBtn">Agendar</span>
 
-                                <span class="start">2024-10-19 19:43:13</span>
-                                <span class="end">2024-10-19 19:43:13</span>
+                                <span class="start">2024-10-05 17:00:00</span>
+                                <span class="end">2024-10-05 17:00:00</span>
                                 <span class="timezone">America/Guatemala</span>
-                                <span class="title">Boda de Carlos y Ana (Fiesta)</span>
+                                <span class="title">Boda de Karen y Oscar</span>
                             </a>
                         </div>
 
@@ -271,104 +294,65 @@
 
                 </div> -->
 
-
             </div>
         </div>
     </section>
-    <!-- Galeria-->
-    <section class="galeria">
+      <!-- End Ceremonia y fiesta -->
 
-
+      <!-- Galeria -->
+      <section class="galeria">
         <div class="container">
-
-
             <div class="row text-center d-flex justify-content-center align-items-center">
-
                 <div class="content-galeria">
-
                     <h2 class="title">Retratos de Nuestro Amor</h2>
                     <p class="subtitle">Un minuto, un segundo, un instante que queda en la eternidad</p>
-
                     <div class="anim-galeria"></div>
-
                 </div>
-
             </div>
-
         </div>
-
-
         <div class="content-fotos">
-
             <div class="shadow-left"></div>
             <div class="shadow-right"></div>
-
             <div class="carrusel">
-
-
                 <!-- Impmrimo el bloque con la imagen -->
-
                 <div>
                     <div class="polaroid">
-
-                        <a href="img/portada.png" data-fancybox="galeria">
-                            <img src="img/portada.png" alt="">
+                        <a href="source/img/galeria/karenyoscar.jpg" data-fancybox="galeria">
+                            <img src="source/img/galeria/karenyoscar.jpg" alt="">
                         </a>
-
                     </div>
                 </div>
-
-
                 <!-- Impmrimo el bloque con la imagen -->
-
                 <div>
                     <div class="polaroid">
-
-                        <a href="img/portada.png" data-fancybox="galeria">
-                            <img src="img/portada.png" alt="">
+                        <a href="source/img/galeria/karenyoscar.jpg" data-fancybox="galeria">
+                            <img src="source/img/galeria/karenyoscar.jpg" alt="">
                         </a>
-
                     </div>
                 </div>
-
-
                 <!-- Impmrimo el bloque con la imagen -->
-
                 <div>
                     <div class="polaroid">
-
-                        <a href="img/galeria/4.jpg" data-fancybox="galeria">
-                            <img src="img/galeria/4.jpg" alt="">
+                        <a href="source/img/galeria/karenyoscar.jpg" data-fancybox="galeria">
+                            <img src="source/img/galeria/karenyoscar.jpg" alt="">
                         </a>
-
                     </div>
                 </div>
-
-
                 <!-- Impmrimo el bloque con la imagen -->
-
                 <div>
                     <div class="polaroid">
-
-                        <a href="img/galeria/5.jpg" data-fancybox="galeria">
-                            <img src="img/galeria/5.jpg" alt="">
+                        <a href="source/img/galeria/karenyoscar.jpg" data-fancybox="galeria">
+                            <img src="source/img/galeria/karenyoscar.jpg" alt="">
                         </a>
-
                     </div>
                 </div>
-
-
-
             </div>
-
         </div>
-
-
-
-
     </section>
-    <!-- Fiesta-->
-    <section class="fiesta">
+       <!-- End Galeria -->
+
+       <!-- Información -->
+       <section class="fiesta">
 
         <div class="container">
             <div class="row text-center d-flex justify-content-center align-items-center">
@@ -387,9 +371,9 @@
                 <div class="col-md-4 item-fiesta">
 
 
-                    <img class="hojas-musica" src="img/img_hojasFiesta.svg"
+                    <img class="hojas-musica"  src="img/img_hojasFiesta.svg"
                         alt="">
-
+                
                     <div
                         class="w-100 content-item-fiesta d-flex flex-column justify-content-between align-items-center">
 
@@ -398,7 +382,7 @@
                         <h3>Música</h3>
 
                         <div class="d-flex justify-content-center align-items-center content-anim-fiesta">
-                            <div class="anim-musica"></div>
+                            <div class="anim-musica" id="fiesta"></div>
                         </div>
 
 
@@ -424,7 +408,7 @@
                         <h3>Dress Code</h3>
 
                         <div class="d-flex justify-content-center align-items-center content-anim-fiesta">
-                            <div class="anim-vestuario"></div>
+                            <div class="anim-vestuario" id="anim-vestuario"></div>
                         </div>
 
                         <p>
@@ -450,7 +434,7 @@
 
 
                         <div class=" d-flex justify-content-center align-items-center content-anim-fiesta">
-                            <div class="anim-tips"></div>
+                            <div class="anim-tips" id="anim-tips"></div>
                         </div>
 
 
@@ -469,32 +453,34 @@
 
             </div>
         </div>
-    </section>
-    <!-- Regalos-->
-    <section class="regalos">
+        </section>
+
+        <!-- Regalos -->
+        <section class="regalos">
 
 
-        <div class="regalos-flor-der"></div>
-
-        <div class="container">
-            <div class="row text-center d-flex justify-content-center align-items-center">
-
-                <h2 class="title">Regalos</h2>
-                <p class="subtitle">Si deseas regalarnos algo más que tu hermosa presencia...</p>
-
-                <div class="w-100">
-
-                    <div class="anim-regalos"></div>
-
+            <div class="regalos-flor-der" id="regalos-flor-der"></div>
+    
+            <div class="container">
+                <div class="row text-center d-flex justify-content-center align-items-center">
+    
+                    <h2 class="title">Regalos</h2>
+                    <p class="subtitle">Si deseas regalarnos algo más que tu hermosa presencia...</p>
+    
+                    <div class="w-100">
+    
+                        <div class="anim-regalos" id="anim-regalos"></div>
+    
+                    </div>
+    
+                    <br>
+    
+                    <a href="#" class="boton modal-regalos">Cuenta Bancaria - Lista Regalos</a>
+    
                 </div>
-
-                <br>
-
-                <a href="#" class="boton modal-regalos">Cuenta Bancaria - Lista Regalos</a>
-
             </div>
-        </div>
-    </section>
+        </section>
+    
     <!-- Instagram-->
     <section class="instagram">
 
@@ -513,120 +499,336 @@
 
                 <div class="w-100">
 
-                    <a target="_blank" href="https://www.instagram.com/" class="hashtag">#carlosyana</a>
+                    <a target="_blank" href="https://www.instagram.com/" class="hashtag">#bodakarenyoscar</a>
 
                 </div>
 
                 <br>
 
-                <a target="_blank" href="https://www.instagram.com/" class="boton">Ver en Instagram</a>
+                <a target="_blank" href="https://www.instagram.com/oscarleonapp/" class="boton">Ver en Instagram</a>
 
             </div>
         </div>
     </section>
-    <!-- Footer-->
-    <section class="footer">
-        <div class="container">
 
-            <div class="row">
+  <!-- Modal asistencia-->
+  <div id="modalAsistencia" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="img-top-modal d-flex justify-content-center align-items-start">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="white-circle-icon">
+                    <img class="" src="img/img_circuloCeremonia.svg" alt="">
+                </div>
+
+            </div>
+
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+            </div>
+
+            <div class="modal-body">
 
 
+                <div class="formulario-content">
 
-                <div class="col-md-6 col-nombres-footer d-flex justify-content-end align-items-center">
+                    <form id="formAsistencia" action="">
 
-                    <h4>
-                        Carlos <span>&</span>
-                        Ana </h4>
+
+                        <div
+                            class="form-group d-flex justify-content-around custom-control custom-radio custom-control-inline">
+                            <div class="form-check">
+                                <input class="form-check-input custom-control-input" type="radio" name="asistencia"
+                                    id="1" value="Si" checked>
+                                <label class="form-check-label custom-control-label" for="1">
+                                    Si! Confirmo </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="custom-control-input" type="radio" name="asistencia" id="2"
+                                    value="No">
+                                <label class="custom-control-label" for="2">
+                                    No puedo :( </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="nombreAsistente" name='nombre'
+                                placeholder="Ingrese su nombre completo">
+                        </div>
+
+
+                        <div class="form-group">
+                            <textarea id="comentariosAsistente" class="form-control" name="comentarios" id=""
+                                rows="2"
+                                placeholder="Ingrese algun dato importante, Ej: Soy vegetariano"></textarea>
+                        </div>
+
+                        <input id="eventoAsistencia" type="hidden" name="evento" value="">
+                        <input type="hidden" name="invitacion" value="">
+                        <input type="hidden" name="token" value="">
+                        <input type="hidden" name="lang" value="es">
+                        <input type="hidden" name="country" value="gt">
+
+                    </form>
 
                 </div>
 
+                <div class="msj-content d-flex flex-column justify-content-center"></div>
 
-                <div
-                    class="col-md-6 col-acciones-footer d-flex justify-content-center justify-content-md-start align-items-center">
+            </div>
 
-                    <ul>
+            <div class="modal-footer">
+                <button type="button" id="sendAsistencia" class="boton">Enviar</button>
+            </div>
+        </div>
 
-                        <li>
-                            <a href="#" data-evento="Ceremonia" class="confirmar-asistencia">Confirmar asistencia a
-                                ceremonia</a>
-                        </li>
 
-                        <li>
-                            <a href="#" data-evento="Fiesta" class="confirmar-asistencia">Confirmar asistencia a
-                                fiesta</a>
-                        </li>
+    </div>
+</div>
+<!-- Modal sugerir cancion-->
+<div id="modalSugerirCancion" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
 
-                        <li>
-                            <a href="#" class="sugerir-cancion">Sugerir canción</a>
-                        </li>
+            <div class="img-top-modal d-flex justify-content-center align-items-start">
 
-                        <li>
-                            <div title="" class="addeventatc">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
 
-                                <span class="nameBtn">Agendar Fiesta</span>
-
-                                <span class="start">2024-10-19 19:43:13</span>
-                                <span class="end">2024-10-19 19:43:13</span>
-                                <span class="timezone">America/Guatemala</span>
-                                <span class="title">Boda de Carlos y Ana (Fiesta)</span>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div title="" class="addeventatc">
-
-                                <span class="nameBtn">Agendar Ceremonia</span>
-
-                                <span class="start">2024-10-19 19:43:13</span>
-                                <span class="end">2024-10-19 19:43:13</span>
-                                <span class="timezone">America/Guatemala</span>
-                                <span class="title">Boda de Carlos y Ana (Ceremonia)</span>
-
-                            </div>
-                        </li>
-
-                    </ul>
-
+                <div class="white-circle-icon">
+                    <img class="" src="img/img_circuloCanciones.svg" alt="">
                 </div>
-
 
 
             </div>
 
-        </div>
-    </section>
-    <!-- Firma-->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
 
 
-                    <p>
-                        Desarrollado con <span class="heart">&#129505;</span> por <a href="https://fixdate.io/gt/"
-                            target="_blank">Fixdate</a>
-                    </p>
+            <div class="modal-header">
+
+                <h5 class="modal-title">Sugerir Canción</h5>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="formulario-content">
+
+                    <form id="formSugerirCancion" action="">
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="nombreSugerencia" name='nombre'
+                                placeholder="Tu nombre">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="descripcionSugerencia" name='descripcion'
+                                placeholder="Nombre de cancion y autor">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="linkSugerencia" name='link'
+                                placeholder="Si lo desea ingrese el link de youtube, spotify, etc.">
+                        </div>
 
 
-                    <!-- Modal cambio de idioma -->
+                        <input type="hidden" name="invitacion" value="">
+                        <input type="hidden" name="token" value="">
+                        <input type="hidden" name="lang" value="es">
+                        <input type="hidden" name="country" value="gt">
 
-                    <p>
-                        <img class="current-flag" width="20" height="20"
-                            src="https://fixdate.io/public/images/iconos-paises/es-GT.svg" alt="">
-                        <a href="#" data-toggle="modal" data-target="#modal-lang">Cambiar país</a>
-                    </p>
-
-
+                    </form>
 
                 </div>
+
+                <div class="msj-content d-flex flex-column justify-content-center"></div>
+
             </div>
+
+            <div class="modal-footer">
+                <button type="button" id="sendSugerenciaCancion" class="boton">Sugerir canción</button>
+            </div>
+
+
         </div>
-    </footer>
+    </div>
+</div>
+<!-- Modal vestuario-->
+<div id="modalVestuario" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="img-top-modal d-flex justify-content-center align-items-start">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="white-circle-icon">
+                    <img class="" src="img/vestuario.svg" alt="">
+                </div>
 
 
-    <!-- Musica -->
+            </div>
 
+
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">Vestimenta</h5>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p>Las mujeres deben ir de vestido de noche o fiesta</p>
+                <p>Los hombres deben vestir formal</p>
+
+            </div>
+
+
+            <div class="modal-footer"></div>
+
+
+        </div>
+    </div>
+</div>
+<!-- Modal tips-->
+<div id="modalTips" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="img-top-modal d-flex justify-content-center align-items-start">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="white-circle-icon">
+                    <img class="" src="img/tips.svg" alt="">
+                </div>
+
+            </div>
+
+
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">Tips y Notas</h5>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p>El parqueo esta sobre grama</p>
+                <p>Esta temporada de lluvia</p>
+                <p>El clima es frío y la fiesta tiene entradas de bastante aire</p>
+
+            </div>
+
+
+            <div class="modal-footer"></div>
+
+
+        </div>
+    </div>
+</div>
+<!-- Modal regalos-->
+<div id="modalRegalos" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="img-top-modal d-flex justify-content-center align-items-start">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="white-circle-icon">
+                    <div class="anim-regalos" id="anim-regalos-2"></div>
+                </div>
+                
+            </div>
+
+
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">Regalos</h5>
+
+            </div>
+
+            <div class="modal-body">
+                <p>Contar con ustedes en nuestra boda es el mejor regalo.</p>
+                <p>Pero si lo desean, pueden hacernos un obsequio
+                    monetario el cual pueden depositar el día de la boda con los sobres que estarán en la mesa de regalos o
+                    bien por transferencia a las siguientes cuentas.
+                </p>
+                <p><strong>Karen Sayle</strong>
+                    <br>
+                    Banco Industrial
+                    <br>
+                    Cuenta Monetaria / Quetzales
+                    <br>
+                    XXX XXX XXX
+                </p>
+                <p><strong>Oscar León</strong>
+                    <br>
+                    Banco Industrial
+                    <br>
+                    Cuenta Monetaria / Quetzales
+                    <br>
+                    1490147921
+                </p>
+                 </div>
+
+            <div class="modal-footer">
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- Modal mapa-->
+<div id="modalMapa" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="img-top-modal d-flex justify-content-center align-items-start">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+
+
+            <div class="modal-header">
+
+                <h5 class="modal-title"></h5>
+
+            </div>
+
+            <div class="modal-body">
+                <div id="googleMap"></div>
+            </div>
+
+            <div class="modal-footer">
+                <a class="boton ampliar-mapa" target="_blank" href="#">Ampliar mapa</a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- Modal cambio de idioma -->
 
     <div id="controlador-musica">
         <div id="play-pause-music" data-estado-music="pause" class="music-anim-icon"></div>
@@ -636,1408 +838,672 @@
 
 
 
-
-
-    <!-- Si esta en modo "Modelo" muestro el repdorductor de musica sin musica -->
-
-    <!-- Modal asistencia-->
-    <div id="modalAsistencia" class="modal fade" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-
-            <div class="modal-content">
-
-                <div class="img-top-modal d-flex justify-content-center align-items-start">
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-
-                    <div class="white-circle-icon">
-                        <img class="" src="img/img_circuloCeremonia.svg" alt="">
-                    </div>
-
-                </div>
-
-                <div class="modal-header">
-                    <h5 class="modal-title"></h5>
-                </div>
-
-                <div class="modal-body">
-
-
-                    <div class="formulario-content">
-
-                        <form id="formAsistencia" action="">
-
-
-                            <div
-                                class="form-group d-flex justify-content-around custom-control custom-radio custom-control-inline">
-                                <div class="form-check">
-                                    <input class="form-check-input custom-control-input" type="radio" name="asistencia"
-                                        id="1" value="Si" checked>
-                                    <label class="form-check-label custom-control-label" for="1">
-                                        Si! Confirmo </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="custom-control-input" type="radio" name="asistencia" id="2"
-                                        value="No">
-                                    <label class="custom-control-label" for="2">
-                                        No puedo :( </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="nombreAsistente" name='nombre'
-                                    placeholder="Ingrese su nombre completo">
-                            </div>
-
-
-                            <div class="form-group">
-                                <textarea id="comentariosAsistente" class="form-control" name="comentarios" id=""
-                                    rows="2"
-                                    placeholder="Ingrese algun dato importante, Ej: Soy vegetariano"></textarea>
-                            </div>
-
-                            <input id="eventoAsistencia" type="hidden" name="evento" value="">
-                            <input type="hidden" name="invitacion" value="">
-                            <input type="hidden" name="token" value="">
-                            <input type="hidden" name="lang" value="es">
-                            <input type="hidden" name="country" value="gt">
-
-                        </form>
-
-                    </div>
-
-                    <div class="msj-content d-flex flex-column justify-content-center"></div>
-
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" id="sendAsistencia" class="boton">Enviar</button>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-    <!-- Modal sugerir cancion-->
-    <div id="modalSugerirCancion" class="modal fade" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-
-                <div class="img-top-modal d-flex justify-content-center align-items-start">
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-
-                    <div class="white-circle-icon">
-                        <img class="" src="img/img_circuloCanciones.svg" alt="">
-                    </div>
-
-
-                </div>
-
-
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title">Sugerir Canción</h5>
-
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="formulario-content">
-
-                        <form id="formSugerirCancion" action="">
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="nombreSugerencia" name='nombre'
-                                    placeholder="Tu nombre">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="descripcionSugerencia" name='descripcion'
-                                    placeholder="Nombre de cancion y autor">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="linkSugerencia" name='link'
-                                    placeholder="Si lo desea ingrese el link de youtube, spotify, etc.">
-                            </div>
-
-
-                            <input type="hidden" name="invitacion" value="">
-                            <input type="hidden" name="token" value="">
-                            <input type="hidden" name="lang" value="es">
-                            <input type="hidden" name="country" value="gt">
-
-                        </form>
-
-                    </div>
-
-                    <div class="msj-content d-flex flex-column justify-content-center"></div>
-
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" id="sendSugerenciaCancion" class="boton">Sugerir canción</button>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-    <!-- Modal vestuario-->
-    <div id="modalVestuario" class="modal fade" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-
-                <div class="img-top-modal d-flex justify-content-center align-items-start">
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-
-                    <div class="white-circle-icon">
-                        <img class="" src="img/vestuario.svg" alt="">
-                    </div>
-
-
-                </div>
-
-
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title">Dress Code</h5>
-
-                </div>
-
-                <div class="modal-body">
-
-                    <p>Contenido Dress Code</p>
-
-                </div>
-
-
-                <div class="modal-footer"></div>
-
-
-            </div>
-        </div>
-    </div>
-    <!-- Modal tips-->
-    <div id="modalTips" class="modal fade" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-
-                <div class="img-top-modal d-flex justify-content-center align-items-start">
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-
-                    <div class="white-circle-icon">
-                        <img class="" src="img/tips.svg" alt="">
-                    </div>
-
-                </div>
-
-
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title">Tips y Notas</h5>
-
-                </div>
-
-                <div class="modal-body">
-
-                    <p>Contenido Tips y Notas</p>
-
-                </div>
-
-
-                <div class="modal-footer"></div>
-
-
-            </div>
-        </div>
-    </div>
-    <!-- Modal regalos-->
-    <div id="modalRegalos" class="modal fade" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-
-                <div class="img-top-modal d-flex justify-content-center align-items-start">
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-
-                    <div class="white-circle-icon">
-                        <img class="" src="img/img_circuloRegalo.svg" alt="">
-                    </div>
-
-                </div>
-
-
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title">Regalos</h5>
-
-                </div>
-
-                <div class="modal-body">
-                    Contenido modal regalos </div>
-
-                <div class="modal-footer">
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-    <!-- Modal mapa-->
-    <div id="modalMapa" class="modal fade" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-
-                <div class="img-top-modal d-flex justify-content-center align-items-start">
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-
-                </div>
-
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title"></h5>
-
-                </div>
-
-                <div class="modal-body">
-                    <div id="googleMap"></div>
-                </div>
-
-                <div class="modal-footer">
-                    <a class="boton ampliar-mapa" target="_blank" href="#">Ampliar mapa</a>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-    <!-- Modal cambio de idioma -->
-
-
-
-
-
-
-   
-  <!-- Scripts -->
-
-  
-
-  <!-- // Consulto tipo de dispositivo -->
-  <script>
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-  
-      var device = 'mobile';
-    } else {
-      var device = 'desktop';
-    }
-  </script>
-  
-  
-  
-
-  
-  <!-- Lottie -->
-  <script src="js/lottie_svg.min.js"></script>
-
-  <!-- Soporte WEBP -->
-  <script>
-    function support_format_webp() {
-      var elem = document.createElement('canvas');
-  
-      if (!!(elem.getContext && elem.getContext('2d'))) {
-        // was able or not to get WebP representation
-        return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
-      } else {
-        // very old browser like IE 8, canvas not supported
-        return false;
-      }
-    }
-  </script>
-  
-  
-  
-  <!-- Listado de js con version dinamica segun modificacion de archivo -->
-
-  </script><script type='text/javascript' src='https://fixdate.io/modelo-invitacion/30/js/jquery-3.5.1.min.js?v=1670862235'>
-
-  </script><script type='text/javascript' src='https://fixdate.io/modelo-invitacion/30/../../public/js/jquery.cookie.js?v=1645580925'>
-
-  </script><script type='text/javascript' src='https://fixdate.io/modelo-invitacion/30/../../public/js/change-lang.js?v=1645580924'>
-
-  </script><script type='text/javascript' src='https://fixdate.io/modelo-invitacion/30/js/waypoint/noframework.waypoints.min.js?v=1670865716'>
-
-  </script><script type='text/javascript' src='https://fixdate.io/modelo-invitacion/30/js/parallax.min.js?v=1670862237'>
-
-  </script><script type='text/javascript' src='https://fixdate.io/modelo-invitacion/30/js/popper.min.js?v=1670862237'>
-
-  </script><script type='text/javascript' src='https://fixdate.io/modelo-invitacion/30/js/bootstrap.min.js?v=1670862235'>
-
-  </script><script type='text/javascript' src='https://fixdate.io/modelo-invitacion/30/js/slick.min.js?v=1670862238'>
-
-  </script><script type='text/javascript' src='https://fixdate.io/modelo-invitacion/30/js/jquery.fancybox.min.js?v=1670862236'>
-
-  </script><script type='text/javascript' src='https://fixdate.io/modelo-invitacion/30/js/scripts.js?v=1670862237'></script>
-  
-
-
-  
-    
-  
-  
-  
-  
-    <!-- Animacion Flores-->
+     <!-- SCRIPTS -->
+
+     <!-- Paralax -->
+     <script src="js/jquery-3.5.1.min.js"></script>
+     <script src="js/jquery.cookie.js"></script>
+     <script src="js/parallax.min.js"></script>
+     <script src="js/popper.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/slick.min.js"></script>
+     <script src="js/jquery.fancybox.min.js"></script>
+
+     <script src="js/cuenta-regresiva.js"></script>
+     <script src="js/portada.js"></script>
+     <!-- <script src="js/noframework.waypoints.min.js"></script> -->
+     <!-- <script src="js/base.js"></script> -->
+      <script src="js/parallax.min.js"></script>
+    <!-- Cambia la imagen de la porta -->
+    <script src="js/portada.js"></script>
+    <!-- Carrusel -->
     <script>
-      let svgContainerFlores1 = document.querySelector('.portada-flor-izq-sup');
-  
-      let animFlores1 = bodymovin.loadAnimation({
-        wrapper: svgContainerFlores1,
-        animType: 'svg',
-        autoplay: false,
-        loop: false,
-        path: _pathProducto + "img/json_hojas01.json"
-      });
-  
-      var wpFlores1 = new Waypoint({
-        element: document.querySelector('.cuenta-regresiva'),
-        handler: function() {
-          animFlores1.stop();
-          animFlores1.play()
-        }
-      });
-  
-  
-  
-      let svgContainerFlores2 = document.querySelector('.portada-flor-der-inf');
-  
-      let animFlores2 = bodymovin.loadAnimation({
-        wrapper: svgContainerFlores2,
-        animType: 'svg',
-        autoplay: false,
-        loop: false,
-        path: _pathProducto + "img/json_hojas02.json"
-      });
-  
-      var wpFlores2 = new Waypoint({
-        element: document.querySelector('.cuenta-regresiva'),
-        handler: function() {
-          animFlores2.stop();
-          animFlores2.play()
-        }
-      });
-  
-  
-      let svgContainerFlores3 = document.querySelector('.portada-flor-izq-inf');
-  
-      let animFlores3 = bodymovin.loadAnimation({
-        wrapper: svgContainerFlores3,
-        animType: 'svg',
-        autoplay: false,
-        loop: false,
-        path: _pathProducto + "img/json_hojas03.json"
-      });
-  
-      var wpFlores3 = new Waypoint({
-        element: document.querySelector('.falta'),
-        handler: function() {
-          animFlores3.stop();
-          animFlores3.play()
-        }
-      });
-  
-  
-      let svgContainerFlores4 = document.querySelector('.ceremonia-fiesta-flor-der');
-  
-      let animFlores4 = bodymovin.loadAnimation({
-        wrapper: svgContainerFlores4,
-        animType: 'svg',
-        autoplay: false,
-        loop: false,
-        path: _pathProducto + "img/json_hojas04.json"
-      });
-  
-      var wpFlores4 = new Waypoint({
-        element: document.querySelector('.falta'),
-        handler: function() {
-          animFlores4.stop();
-          animFlores4.play()
-        }
-      });
-  
-  
-  
-      let svgContainerFlores5 = document.querySelector('.regalos-flor-der');
-  
-      let animFlores5 = bodymovin.loadAnimation({
-        wrapper: svgContainerFlores5,
-        animType: 'svg',
-        autoplay: false,
-        loop: false,
-        path: _pathProducto + "img/json_hojas04.json"
-      });
-  
-      var wpFlores6 = new Waypoint({
-        element: document.querySelector('.regalos'),
-        handler: function() {
-          animFlores5.stop();
-          animFlores5.play()
-        }
-      });
-    </script>
-  
-  
-  
-    <!-- Animacion flecha scroll -->
-    <script>
-      let svgContainerFlechaScroll = document.querySelector('.flecha-continuar');
-  
-      let animFlechaScroll = bodymovin.loadAnimation({
-        wrapper: svgContainerFlechaScroll,
-        animType: 'svg',
-        loop: true,
-        path: _pathProducto + "img/down-scroll.json"
-      });
-  
-      animFlechaScroll.setSpeed(0.6);
-    </script>
-  
-  
-  
-    <!-- Animacion corazon seccion cuenta regresiva-->
-    <script>
-      let svgContainerCorazonFalta = document.querySelector('.corazon-falta');
-  
-      let animCorazonFalta = bodymovin.loadAnimation({
-        wrapper: svgContainerCorazonFalta,
-        animType: 'svg',
-        loop: true,
-        path: _pathProducto + "img/corazon.json"
-      });
-    </script>
-  
-  
-  
-    <!-- Animacion anillos -->
-    <script>
-      let svgContainerAnillos = document.querySelector('.anim-anillos');
-  
-      let animAnillos = bodymovin.loadAnimation({
-        wrapper: svgContainerAnillos,
-        animType: 'svg',
-        loop: true,
-        path: _pathProducto + "img/img_ceremonia.json"
-      });
-  
-      animAnillos.play();
-    </script>
-  
-  
-    <!-- Animacion galeria -->
-    <script>
-      let svgContainerGaleria = document.querySelector('.anim-galeria');
-  
-      let animGaleria = bodymovin.loadAnimation({
-        wrapper: svgContainerGaleria,
-        animType: 'svg',
-        loop: true,
-        path: _pathProducto + "img/json_camara.json"
-      });
-  
-      animGaleria.play();
-    </script>
-  
-  
-    <!-- Animacion Musica -->
-    <script>
-      let svgContainerMusica = document.querySelector('.anim-musica');
-  
-      let animMusica = bodymovin.loadAnimation({
-        wrapper: svgContainerMusica,
-        animType: 'svg',
-        loop: true,
-        path: _pathProducto + "img/img_musica.json"
-      });
-  
-      animMusica.play();
-    </script>
-  
-  
-  
-    <!-- Animacion Vestuario -->
-    <script>
-      let svgContainerVestuario = document.querySelector('.anim-vestuario');
-  
-      let animVestuario = bodymovin.loadAnimation({
-        wrapper: svgContainerVestuario,
-        animType: 'svg',
-        loop: true,
-        path: _pathProducto + "img/vestuario.json"
-      });
-  
-      animVestuario.play();
-    </script>
-  
-  
-    <!-- Animacion Tips -->
-    <script>
-      let svgContainerTips = document.querySelector('.anim-tips');
-  
-      let animTips = bodymovin.loadAnimation({
-        wrapper: svgContainerTips,
-        animType: 'svg',
-        loop: true,
-        path: _pathProducto + "img/tips.json"
-      });
-  
-      animTips.play();
-    </script>
-  
-  
-    <!-- Animacion canciones -->
-    <script>
-      let svgContainerFiesta = document.querySelector('.anim-fiesta');
-  
-      let animFiesta = bodymovin.loadAnimation({
-        wrapper: svgContainerFiesta,
-        animType: 'svg',
-        loop: true,
-        path: _pathProducto + "img/img_fiesta.json"
-      });
-  
-      animFiesta.play();
-    </script>
-  
-  
-    <!-- Animacion regalos -->
-    <script>
-      let svgContainerRegalos = document.querySelector('.anim-regalos');
-  
-      let animRegalos = bodymovin.loadAnimation({
-        wrapper: svgContainerRegalos,
-        animType: 'svg',
-        loop: true,
-        path: _pathProducto + "img/img_regalo.json"
-      });
-  
-      animRegalos.play();
-    </script>
-  
-  
-  
-    <!-- Animacion instagram -->
-    <script>
-      let svgContainerInstagram = document.querySelector('.anim-instagram');
-  
-      let animInstagram = bodymovin.loadAnimation({
-        wrapper: svgContainerInstagram,
-        animType: 'svg',
-        loop: true,
-        path: _pathProducto + "img/img_instagram.json"
-      });
-  
-      animInstagram.play();
-    </script>
-  
-  
-    <!-- Opciones carrusel galeria -->
-    <script>
-      $('.carrusel').slick({
-        lazyLoad: 'ondemand',
-        autoplay: true,
-        autoplaySpeed: 2000,
-        centerMode: true,
-        dots: true,
-        centerPadding: '20px',
-        slidesToShow: 3,
-        prevArrow: false,
-        nextArrow: false,
-        responsive: [{
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 3
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
-    </script>
-  
-  
-    <!-- Modal Confirmar asistencia -->
-    <script>
-      // Abrir modal
-      $('body').on('click', 'a.confirmar-asistencia', function(e) {
-  
-        e.preventDefault();
-  
-        // Remuevo mensajes de error anteriores
-        $("#error-form").remove();
-  
-        var evento = $(this).attr('data-evento');
-  
-        $('#eventoAsistencia').val(evento);
-  
-  
-        if (evento == 'Fiesta') {
-          var titleModalAsistencia = lang_titleModalAsistenciaFiesta;
-          var rutaImgModalAsistencia = _pathProducto + 'img/img_circuloFiesta.svg';
-        }
-  
-        if (evento == 'Ceremonia') {
-          var titleModalAsistencia = lang_titleModalAsistenciaCeremonia;
-          var rutaImgModalAsistencia = _pathProducto + 'img/img_circuloCeremonia.svg';
-        }
-  
-        $('#modalAsistencia .modal-title').text(titleModalAsistencia);
-        $('#modalAsistencia .img-top-modal img').attr('src', rutaImgModalAsistencia);
-  
-  
-        $('#modalAsistencia').modal({
-          backdrop: 'static'
-        })
-  
-      });
-  
-  
-      // Validacion de form.
-      function isOkAsistencia() {
-  
-        // Remuevo mensajes de error anteriores
-        $("#error-form").remove();
-  
-        // Variables necesarias para la validacion
-        var flag = true;
-        var err = '';
-  
-  
-        // Variables del form para validar.
-        var asistenteName = $.trim($("#nombreAsistente").val());
-        var asistenteComentarios = $.trim($("#comentariosAsistente").val());
-  
-  
-        // Nombre
-        if (asistenteName == '') {
-          flag = false;
-          err = lang_nombreRequerido;
-        } else {
-          if (asistenteName.length > 20) {
-            flag = false;
-            err = lang_caracteresNombreAsistencia;
-          }
-        }
-  
-        // Comentarios
-        if (asistenteComentarios != '') {
-          if (asistenteComentarios.length > 100) {
-            flag = false;
-            err = lang_caracteresComentariosAsistencia;
-          }
-        }
-  
-        // Si hay error
-        if (flag === false) {
-  
-          // Imprimo el error
-          $('#formAsistencia').after('<span id="error-form">' + err + '</span>');
-  
-        }
-  
-        // Retorno el estado de la validacion
-        return flag;
-  
-      }
-  
-  
-      // Enviar asistencia
-      $('body').on('click', '#sendAsistencia', function(e) {
-  
-        e.preventDefault();
-  
-  
-        if (isOkAsistencia()) //Form bien validado
-        {
-  
-          // Load and disabled buttom.
-          $("#sendAsistencia").text(lang_informandoAsistencia + "...");
-          $("#sendAsistencia").prop("disabled", true);
-  
-          // Obtengo el Form.
-          var formulario = $("#formAsistencia")[0];
-  
-          // Obtengo los datos del formulario
-          var datos = new FormData(formulario);
-  
-  
-          // Visualizar como viajan los datos
-          // for (var pair of datos.entries()) {
-          //   console.log(pair[0] + ", " + pair[1]);
-          // }
-  
-  
-          // Envio con fetch los datos mediante POST
-          fetch(_pathApp + "producto/fetchs/confirmar-asistencia.php", {
-              method: "POST",
-              body: datos
-            })
-            // Promesas fetch
-            .then(res => res.json())
-            .then(data => {
-  
-              // Si recibo error 
-              if (data.error === true) {
-  
-                $("#sendAsistencia").text(lang_confirmarAsistencia);
-                $("#sendAsistencia").prop("disabled", false);
-  
-                // Imprimo el error
-                $('#formAsistencia').after('<span id="error-form">' + data.desc + '</span>');
+        $('.carrusel').slick({
+          lazyLoad: 'ondemand',
+          autoplay: true,
+          autoplaySpeed: 2000,
+          centerMode: true,
+          dots: true,
+          centerPadding: '20px',
+          slidesToShow: 3,
+          prevArrow: false,
+          nextArrow: false,
+          responsive: [{
+              breakpoint: 768,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 3
               }
-  
-              // Si no hay error 
-              if (data.error === false) {
-  
-                $("#sendAsistencia").text(lang_confirmarAsistencia);
-                $("#sendAsistencia").prop("disabled", false);
-  
-  
-                // Oculto elementos del form y reseteo
-                $('#formAsistencia')[0].reset();
-                $('#modalAsistencia .formulario-content, #modalAsistencia .modal-footer, #modalAsistencia h5').hide();
-  
-  
-  
-                // Acomodo el css para centrar mensaje
-                $('#modalAsistencia .modal-body').addClass('fix-height');
-  
-                // Muestro mensaje de exito
-                $('#modalAsistencia .msj-content').html(
-                  "<h5>" + lang_asistenciaMsjExito_1 + "</h5><p>" + lang_asistenciaMsjExito_2 + "</p>"
-                ).show();
-  
-  
-                // Cierro modal y vuelvo a activar form
-                setTimeout(function() {
-  
-                  $('#modalAsistencia').modal('hide');
-                  $('#modalAsistencia .formulario-content, #modalAsistencia .modal-footer, #modalAsistencia h5').show();
-                  $('#modalAsistencia .msj-content').html('').hide();
-                  $('#modalAsistencia .modal-body').removeClass('fix-height');
-  
-                }, 4000);
-  
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 1
               }
-  
-            });
-        }
-  
-  
-      });
-    </script>
-  
-  
-  <script>
-    // Definir manualmente la fecha para la cuenta regresiva
-    var fechaCuentaRegresiva = 'Oct 05, 2024 17:00:00';  // Cambia esta fecha según lo que necesites
-    var countDownDate = new Date(fechaCuentaRegresiva).getTime();
-
-    // Actualizar el contador cada 1 segundo
-    var x = setInterval(function() {
-
-      // Obtener la fecha y hora actual
-      var now = new Date().getTime();
-
-      // Calcular la diferencia entre la fecha actual y la de la cuenta regresiva
-      var distance = countDownDate - now;
-
-      // Cálculos para días, horas, minutos y segundos
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Mostrar los resultados en los elementos correspondientes
-      $("#dias .number").text(days);
-      $("#horas .number").text(hours);
-      $("#minutos .number").text(minutes);
-      $("#segundos .number").text(seconds);
-
-      // Si la cuenta regresiva ha terminado
-      if (distance < 0) {
-        clearInterval(x);
-        $("#reloj").html('<p class="fin-cuenta">¡La cuenta regresiva ha terminado!</p>');
-      }
-    }, 1000);
-  </script>
-  
-  
-    <!-- Modal sugerir cancion -->
-    <script>
-      // Abrir modal
-      $('body').on('click', 'a.sugerir-cancion', function(e) {
-  
-        e.preventDefault();
-  
-        // Remuevo mensajes de error anteriores
-        $("#error-form").remove();
-  
-        $('#modalSugerirCancion').modal({
-          backdrop: 'static'
-        })
-  
-      });
-  
-  
-  
-      // Validacion de form.
-      function isOkSugerirCancion() {
-  
-  
-        // Remuevo mensajes de error anteriores
-        $("#error-form").remove();
-  
-        // Variables necesarias para la validacion
-        var flag = true;
-        var err = '';
-  
-  
-        // Variables del form para validar.
-        var sugerenciaName = $.trim($("#nombreSugerencia").val());
-        var sugerenciaDescription = $.trim($("#descripcionSugerencia").val());
-        var sugerenciaLink = $.trim($("#linkSugerencia").val());
-  
-  
-  
-        // Descripcion
-        if (sugerenciaDescription == '') {
-          flag = false;
-          err = lang_cancionRequerida;
-        } else {
-          if (sugerenciaDescription.length > 50) {
-            flag = false;
-            err = lang_caracteresCancionSugerencia;
-          }
-        }
-  
-        // Link
-        if (sugerenciaLink != '') {
-  
-          if (!is_url(sugerenciaLink)) {
-            flag = false;
-            err = lang_linkIncorrecto;
-          }
-          if (sugerenciaLink.length > 250) {
-            flag = false;
-            err = lang_caracteresLinkSugerencia;
-          }
-  
-        }
-  
-        // Nombre
-        if (sugerenciaName == '') {
-          flag = false;
-          err = lang_nombreRequerido;
-        } else {
-          if (sugerenciaName.length > 20) {
-            flag = false;
-            err = lang_caracteresNombreSugerencia;
-          }
-        }
-  
-  
-        // Si hay error
-        if (flag === false) {
-  
-          // Imprimo el error
-          $('#formSugerirCancion').after('<span id="error-form">' + err + '</span>');
-  
-        }
-  
-        // Retorno el estado de la validacion
-        return flag;
-  
-      }
-  
-  
-  
-      // Enviar sugerencia
-      $('body').on('click', '#sendSugerenciaCancion', function(e) {
-  
-        e.preventDefault();
-  
-  
-        if (isOkSugerirCancion()) //Form bien validado
-        {
-  
-          // Load and disabled buttom.
-          $("#sendSugerenciaCancion").text(lang_enviandoSugerencia + "...");
-          $("#sendSugerenciaCancion").prop("disabled", true);
-  
-          // Obtengo el Form.
-          var formulario = $("#formSugerirCancion")[0];
-  
-          // Obtengo los datos del formulario
-          var datos = new FormData(formulario);
-  
-  
-          // Visualizar como viajan los datos
-          for (var pair of datos.entries()) {
-            console.log(pair[0] + ", " + pair[1]);
-          }
-  
-  
-          // Envio con fetch los datos mediante POST
-          fetch(_pathApp + "producto/fetchs/sugerir-cancion.php", {
-              method: "POST",
-              body: datos
-            })
-            // Promesas fetch
-            .then(res => res.json())
-            .then(data => {
-  
-              // Si recibo error 
-              if (data.error === true) {
-  
-                $("#sendSugerenciaCancion").text(lang_sugerirCancion);
-                $("#sendSugerenciaCancion").prop("disabled", false);
-  
-                // Imprimo el error
-                $('#formSugerirCancion').after('<span id="error-form">' + data.desc + '</span>');
-              }
-  
-              // Si no hay error 
-              if (data.error === false) {
-  
-                $("#sendSugerenciaCancion").text(lang_sugerirCancion);
-                $("#sendSugerenciaCancion").prop("disabled", false);
-  
-  
-                // Oculto elementos del form y reseteo
-                $('#formSugerirCancion')[0].reset();
-                $('#modalSugerirCancion .formulario-content, #modalSugerirCancion .modal-footer, #modalSugerirCancion h5').hide();
-  
-  
-                // Acomodo el css para centrar mensaje
-                $('#modalSugerirCancion .modal-body').addClass('fix-height');
-  
-  
-                // Muestro mensaje de exito
-  
-                $('#modalSugerirCancion .msj-content').html(
-                  "<h5>" + lang_sugerirCancionMsjExito_1 + "</h5><p>" + lang_sugerirCancionMsjExito_2 + "</p>"
-                ).show();
-  
-  
-                // Cierro modal y vuelvo a activar form
-                setTimeout(function() {
-  
-                  $('#modalSugerirCancion').modal('hide');
-                  $('#modalSugerirCancion .formulario-content, #modalSugerirCancion .modal-footer, #modalSugerirCancion h5').show();
-                  $('#modalSugerirCancion .msj-content').html('').hide();
-                  $('#modalSugerirCancion .modal-body').removeClass('fix-height');
-  
-                }, 4000);
-  
-              }
-  
-            });
-        }
-  
-  
-      });
-    </script>
-  
-  
-    <!-- Modal Vestuario -->
-    <script>
-      // Abrir modal
-      $('body').on('click', 'a.modal-vestuario', function(e) {
-  
-        e.preventDefault();
-  
-        $('#modalVestuario').modal({
-          backdrop: 'static'
-        })
-  
-      });
-    </script>
-  
-  
-    <!-- Modal Tips -->
-    <script>
-      // Abrir modal
-      $('body').on('click', 'a.modal-tips', function(e) {
-  
-        e.preventDefault();
-  
-        $('#modalTips').modal({
-          backdrop: 'static'
-        })
-  
-      });
-    </script>
-  
-  
-    <!-- Modal regalos -->
-    <script>
-      // Abrir modal
-      $('body').on('click', 'a.modal-regalos', function(e) {
-  
-        e.preventDefault();
-  
-        $('#modalRegalos').modal({
-          backdrop: 'static'
-        })
-  
-      });
-    </script>
-  
-  
-  
-    <!-- Modal como llegar -->
-    <script>
-      // Abrir modal
-      $('body').on('click', 'a.modal-como-llegar', function(e) {
-  
-        e.preventDefault();
-  
-        var evento = $(this).attr('data-evento');
-  
-        if (evento == 'Fiesta') {
-          var titleModalMapa = lang_titleModalMapaFiesta;
-  
-          var latitudMapa = latitudFiesta;
-          var longitudMapa = longitudFiesta;
-        }
-  
-        if (evento == 'Ceremonia') {
-          var titleModalMapa = lang_titleModalMapaCeremonia;
-  
-          var latitudMapa = latitudCeremonia;
-          var longitudMapa = longitudCeremonia;
-        }
-  
-        // Cambio titulo
-        $('#modalMapa .modal-title').text(titleModalMapa);
-  
-        // Genero el link para ampliar mapa
-        $('.ampliar-mapa').attr('href', 'https://www.google.com/maps/search/?api=1&query=' + latitudMapa + ',' + longitudMapa);
-  
-        // Cambio mapa
-        initMap(latitudMapa, longitudMapa);
-  
-        $('#modalMapa').modal({
-          backdrop: 'static'
-        })
-  
-      });
-    </script>
-  
-  
-  
-    <!-- Instagram parallax -->
-    <script>
-      // Si el ancho es de Telefono
-      if ($(window).width() < 768) {
-  
-        // Aceptar webp?
-        if (support_format_webp()) {
-          var imageInstagramParallax = 'img/instagram_mobile.webp';
-        } else {
-          var imageInstagramParallax = 'img/instagram_mobile.jpg';
-        }
-  
-      } else {
-  
-        // Aceptar webp?
-        if (support_format_webp()) {
-          var imageInstagramParallax = 'img/instagram.webp';
-        } else {
-          var imageInstagramParallax = 'img/instagram.jpg';
-        }
-  
-      }
-  
-      $('.instagram').parallax({
-        imageSrc: _pathProducto + imageInstagramParallax
-      });
-    </script>
-  
-  
-    <!-- Api Maps-->
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_3ZK1od6HtymslnbVFuzpUbMfrCRVqzM&callback=initMap&r=2039649914">
-    </script>
-  
-  
-    <script>
-      // Config map
-      function initMap(latitud = 0, longitud = 0) {
-  
-        var myLatLng = {
-          lat: latitud,
-          lng: longitud
-        };
-  
-        var mapOptions = {
-          // How zoomed in you want the map to start at (always required)
-          zoom: 15,
-          scrollwheel: false,
-          disableDefaultUI: false,
-  
-          // The latitude and longitude to center the map (always required)
-          center: new google.maps.LatLng(latitud, longitud),
-  
-          // How you would like to style the map.
-          // This is where you would paste any style found on Snazzy Maps.
-          styles: [{
-              "featureType": "administrative",
-              "elementType": "labels.text.fill",
-              "stylers": [{
-                "color": "#6195a0"
-              }]
-            },
-            {
-              "featureType": "landscape",
-              "elementType": "all",
-              "stylers": [{
-                "color": "#f2f2f2"
-              }]
-            },
-            {
-              "featureType": "landscape",
-              "elementType": "geometry.fill",
-              "stylers": [{
-                "color": "#ffffff"
-              }]
-            },
-            {
-              "featureType": "poi",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            },
-            {
-              "featureType": "poi.park",
-              "elementType": "geometry.fill",
-              "stylers": [{
-                  "color": "#e6f3d6"
-                },
-                {
-                  "visibility": "on"
-                }
-              ]
-            },
-            {
-              "featureType": "road",
-              "elementType": "all",
-              "stylers": [{
-                  "saturation": -100
-                },
-                {
-                  "lightness": 45
-                },
-                {
-                  "visibility": "simplified"
-                }
-              ]
-            },
-            {
-              "featureType": "road.highway",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "simplified"
-              }]
-            },
-            {
-              "featureType": "road.highway",
-              "elementType": "geometry.fill",
-              "stylers": [{
-                  "color": "#f4d2c5"
-                },
-                {
-                  "visibility": "simplified"
-                }
-              ]
-            },
-            {
-              "featureType": "road.highway",
-              "elementType": "labels.text",
-              "stylers": [{
-                "color": "#4e4e4e"
-              }]
-            },
-            {
-              "featureType": "road.arterial",
-              "elementType": "geometry.fill",
-              "stylers": [{
-                "color": "#f4f4f4"
-              }]
-            },
-            {
-              "featureType": "road.arterial",
-              "elementType": "labels.text.fill",
-              "stylers": [{
-                "color": "#787878"
-              }]
-            },
-            {
-              "featureType": "road.arterial",
-              "elementType": "labels.icon",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            },
-            {
-              "featureType": "transit",
-              "elementType": "all",
-              "stylers": [{
-                "visibility": "off"
-              }]
-            },
-            {
-              "featureType": "water",
-              "elementType": "all",
-              "stylers": [{
-                  "color": "#eaf6f8"
-                },
-                {
-                  "visibility": "on"
-                }
-              ]
-            },
-            {
-              "featureType": "water",
-              "elementType": "geometry.fill",
-              "stylers": [{
-                "color": "#eaf6f8"
-              }]
             }
           ]
-  
-        };
-  
-        var mapElement = document.getElementById('googleMap');
-  
-        var map = new google.maps.Map(mapElement, mapOptions);
-  
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
         });
-  
-      }
-    </script>
-  
-  
-    <!-- AddEvent script -->
-    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
-  
-  
-    <!-- AddEvent Settings -->
-    <script type="text/javascript">
-      window.addeventasync = function() {
-        addeventatc.settings({
-  
-          css: false,
-  
-          appleical: {
-            show: true,
-            text: "Apple Calendar"
-          },
-          google: {
-            show: true,
-            text: "Google <em>(online)</em>"
-          },
-          office365: {
-            show: true,
-            text: "Office 365 <em>(online)</em>"
-          },
-          outlook: {
-            show: true,
-            text: "Outlook"
-          },
-          outlookcom: {
-            show: true,
-            text: "Outlook.com <em>(online)</em>"
-          },
-          yahoo: {
-            show: true,
-            text: "Yahoo <em>(online)</em>"
-          },
-          facebook: {
-            show: true,
-            text: "Facebook"
-          }
-        });
-      };
-    </script>
-  
-  
-  
-    <!-- Idiomas segun config de invitacion -->
+      </script>
+
+    <!-- Modal sugerir cancion -->
+    <script>
+        // Abrir modal
+        $('body').on('click', 'a.sugerir-cancion', function(e) {
     
+          e.preventDefault();
+    
+          // Remuevo mensajes de error anteriores
+          $("#error-form").remove();
+    
+          $('#modalSugerirCancion').modal({
+            backdrop: 'static'
+          })
+    
+        });
+    
+    
+    
+        // Validacion de form.
+        function isOkSugerirCancion() {
+    
+    
+          // Remuevo mensajes de error anteriores
+          $("#error-form").remove();
+    
+          // Variables necesarias para la validacion
+          var flag = true;
+          var err = '';
+    
+    
+          // Variables del form para validar.
+          var sugerenciaName = $.trim($("#nombreSugerencia").val());
+          var sugerenciaDescription = $.trim($("#descripcionSugerencia").val());
+          var sugerenciaLink = $.trim($("#linkSugerencia").val());
+    
+    
+    
+          // Descripcion
+          if (sugerenciaDescription == '') {
+            flag = false;
+            err = lang_cancionRequerida;
+          } else {
+            if (sugerenciaDescription.length > 50) {
+              flag = false;
+              err = lang_caracteresCancionSugerencia;
+            }
+          }
+    
+          // Link
+          if (sugerenciaLink != '') {
+    
+            if (!is_url(sugerenciaLink)) {
+              flag = false;
+              err = lang_linkIncorrecto;
+            }
+            if (sugerenciaLink.length > 250) {
+              flag = false;
+              err = lang_caracteresLinkSugerencia;
+            }
+    
+          }
+    
+          // Nombre
+          if (sugerenciaName == '') {
+            flag = false;
+            err = lang_nombreRequerido;
+          } else {
+            if (sugerenciaName.length > 20) {
+              flag = false;
+              err = lang_caracteresNombreSugerencia;
+            }
+          }
+    
+    
+          // Si hay error
+          if (flag === false) {
+    
+            // Imprimo el error
+            $('#formSugerirCancion').after('<span id="error-form">' + err + '</span>');
+    
+          }
+    
+          // Retorno el estado de la validacion
+          return flag;
+    
+        }
+    
+    
+    
+        // Enviar sugerencia
+        $('body').on('click', '#sendSugerenciaCancion', function(e) {
+    
+          e.preventDefault();
+    
+    
+          if (isOkSugerirCancion()) //Form bien validado
+          {
+    
+            // Load and disabled buttom.
+            $("#sendSugerenciaCancion").text(lang_enviandoSugerencia + "...");
+            $("#sendSugerenciaCancion").prop("disabled", true);
+    
+            // Obtengo el Form.
+            var formulario = $("#formSugerirCancion")[0];
+    
+            // Obtengo los datos del formulario
+            var datos = new FormData(formulario);
+    
+    
+            // Visualizar como viajan los datos
+            for (var pair of datos.entries()) {
+              console.log(pair[0] + ", " + pair[1]);
+            }
+    
+    
+            // Envio con fetch los datos mediante POST
+            fetch(_pathApp + "producto/fetchs/sugerir-cancion.php", {
+                method: "POST",
+                body: datos
+              })
+              // Promesas fetch
+              .then(res => res.json())
+              .then(data => {
+    
+                // Si recibo error 
+                if (data.error === true) {
+    
+                  $("#sendSugerenciaCancion").text(lang_sugerirCancion);
+                  $("#sendSugerenciaCancion").prop("disabled", false);
+    
+                  // Imprimo el error
+                  $('#formSugerirCancion').after('<span id="error-form">' + data.desc + '</span>');
+                }
+    
+                // Si no hay error 
+                if (data.error === false) {
+    
+                  $("#sendSugerenciaCancion").text(lang_sugerirCancion);
+                  $("#sendSugerenciaCancion").prop("disabled", false);
+    
+    
+                  // Oculto elementos del form y reseteo
+                  $('#formSugerirCancion')[0].reset();
+                  $('#modalSugerirCancion .formulario-content, #modalSugerirCancion .modal-footer, #modalSugerirCancion h5').hide();
+    
+    
+                  // Acomodo el css para centrar mensaje
+                  $('#modalSugerirCancion .modal-body').addClass('fix-height');
+    
+    
+                  // Muestro mensaje de exito
+    
+                  $('#modalSugerirCancion .msj-content').html(
+                    "<h5>" + lang_sugerirCancionMsjExito_1 + "</h5><p>" + lang_sugerirCancionMsjExito_2 + "</p>"
+                  ).show();
+    
+    
+                  // Cierro modal y vuelvo a activar form
+                  setTimeout(function() {
+    
+                    $('#modalSugerirCancion').modal('hide');
+                    $('#modalSugerirCancion .formulario-content, #modalSugerirCancion .modal-footer, #modalSugerirCancion h5').show();
+                    $('#modalSugerirCancion .msj-content').html('').hide();
+                    $('#modalSugerirCancion .modal-body').removeClass('fix-height');
+    
+                  }, 4000);
+    
+                }
+    
+              });
+          }
+    
+    
+        });
+      </script>
+    
+      <!-- Modal Vestuario -->
+      <script>
+        // Abrir modal
+        $('body').on('click', 'a.modal-vestuario', function(e) {
+    
+          e.preventDefault();
+    
+          $('#modalVestuario').modal({
+            backdrop: 'static'
+          })
+    
+        });
+      </script>
+    
+      <!-- Modal Tips -->
+      <script>
+        // Abrir modal
+        $('body').on('click', 'a.modal-tips', function(e) {
+    
+          e.preventDefault();
+    
+          $('#modalTips').modal({
+            backdrop: 'static'
+          })
+    
+        });
+      </script>
   
+      <!-- Modal regalos -->
+      <script>
+        // Abrir modal
+        $('body').on('click', 'a.modal-regalos', function(e) {
+    
+          e.preventDefault();
+    
+          $('#modalRegalos').modal({
+            backdrop: 'static'
+          })
+    
+        });
+      </script>
   
-  
-  
-  <!-- CAMBIAR PORTADA -->
-  <!-- Portada parallax -->
-  <script>
-    if (device == 'mobile' || $(window).width() < 768) {
-  
-      // Aceptar webp?
-      if (support_format_webp()) {
-        var imageParallax = 'img/DJI_0635.JPG';
-      } else {
-        var imageParallax = 'img/DJI_0635.JPG';
-      }
-  
-    } else {
-  
-      // Aceptar webp?
-      if (support_format_webp()) {
-        var imageParallax = 'img/DJI_0635.JPG';
-      } else {
-        var imageParallax = 'img/DJI_0635.JPG';
-      }
-  
-    }
-  
-    $('.portada').parallax({
-      imageSrc: _pathProducto + imageParallax
-    });
-  </script>
+      <!-- Modal como llegar -->
+      <script>
+        // Abrir modal
+        $('body').on('click', 'a.modal-como-llegar', function(e) {
+    
+          e.preventDefault();
+    
+          var evento = $(this).attr('data-evento');
+    
+          if (evento == 'Fiesta') {
+            var titleModalMapa = lang_titleModalMapaFiesta;
+    
+            var latitudMapa = latitudFiesta;
+            var longitudMapa = longitudFiesta;
+          }
+    
+          if (evento == 'Ceremonia') {
+            var titleModalMapa = lang_titleModalMapaCeremonia;
+    
+            var latitudMapa = latitudCeremonia;
+            var longitudMapa = longitudCeremonia;
+          }
+    
+          // Cambio titulo
+          $('#modalMapa .modal-title').text(titleModalMapa);
+    
+          // Genero el link para ampliar mapa
+          $('.ampliar-mapa').attr('href', 'https://www.google.com/maps/search/?api=1&query=' + latitudMapa + ',' + longitudMapa);
+    
+          // Cambio mapa
+          initMap(latitudMapa, longitudMapa);
+    
+          $('#modalMapa').modal({
+            backdrop: 'static'
+          })
+    
+        });
+      </script>
+    
+      <!-- Instagram parallax -->
+      <script>
+        // Si el ancho es de Telefono
+        if ($(window).width() < 768) {
+    
+          // Aceptar webp?
+          if (support_format_webp()) {
+            var imageInstagramParallax = 'source/img/karenyoscar.jpg';
+          } else {
+            var imageInstagramParallax = 'img/instagram_mobile.jpg';
+          }
+    
+        } else {
+    
+          // Aceptar webp?
+          if (support_format_webp()) {
+            var imageInstagramParallax = 'img/instagram.webp';
+          } else {
+            var imageInstagramParallax = 'img/instagram.jpg';
+          }
+    
+        }
+    
+        $('.instagram').parallax({
+          imageSrc: _pathProducto + imageInstagramParallax
+        });
+      </script>
+    
+      <!-- Api Maps-->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_3ZK1od6HtymslnbVFuzpUbMfrCRVqzM&callback=initMap&r=2039649914">
+      </script>
+    
+    
+      <script>
+        // Config map
+        function initMap(latitud = 0, longitud = 0) {
+    
+          var myLatLng = {
+            lat: latitud,
+            lng: longitud
+          };
+    
+          var mapOptions = {
+            // How zoomed in you want the map to start at (always required)
+            zoom: 15,
+            scrollwheel: false,
+            disableDefaultUI: false,
+    
+            // The latitude and longitude to center the map (always required)
+            center: new google.maps.LatLng(latitud, longitud),
+    
+            // How you would like to style the map.
+            // This is where you would paste any style found on Snazzy Maps.
+            styles: [{
+                "featureType": "administrative",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                  "color": "#6195a0"
+                }]
+              },
+              {
+                "featureType": "landscape",
+                "elementType": "all",
+                "stylers": [{
+                  "color": "#f2f2f2"
+                }]
+              },
+              {
+                "featureType": "landscape",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                  "color": "#ffffff"
+                }]
+              },
+              {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              },
+              {
+                "featureType": "poi.park",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "color": "#e6f3d6"
+                  },
+                  {
+                    "visibility": "on"
+                  }
+                ]
+              },
+              {
+                "featureType": "road",
+                "elementType": "all",
+                "stylers": [{
+                    "saturation": -100
+                  },
+                  {
+                    "lightness": 45
+                  },
+                  {
+                    "visibility": "simplified"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "simplified"
+                }]
+              },
+              {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "color": "#f4d2c5"
+                  },
+                  {
+                    "visibility": "simplified"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway",
+                "elementType": "labels.text",
+                "stylers": [{
+                  "color": "#4e4e4e"
+                }]
+              },
+              {
+                "featureType": "road.arterial",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                  "color": "#f4f4f4"
+                }]
+              },
+              {
+                "featureType": "road.arterial",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                  "color": "#787878"
+                }]
+              },
+              {
+                "featureType": "road.arterial",
+                "elementType": "labels.icon",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              },
+              {
+                "featureType": "transit",
+                "elementType": "all",
+                "stylers": [{
+                  "visibility": "off"
+                }]
+              },
+              {
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": [{
+                    "color": "#eaf6f8"
+                  },
+                  {
+                    "visibility": "on"
+                  }
+                ]
+              },
+              {
+                "featureType": "water",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                  "color": "#eaf6f8"
+                }]
+              }
+            ]
+    
+          };
+    
+          var mapElement = document.getElementById('googleMap');
+    
+          var map = new google.maps.Map(mapElement, mapOptions);
+    
+          var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+          });
+    
+        }
+      </script>
+    
+    
+      <!-- AddEvent script -->
+      <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+    
+    
+      <!-- AddEvent Settings -->
+      <script type="text/javascript">
+        window.addeventasync = function() {
+          addeventatc.settings({
+    
+            css: false,
+    
+            appleical: {
+              show: true,
+              text: "Apple Calendar"
+            },
+            google: {
+              show: true,
+              text: "Google <em>(online)</em>"
+            },
+            office365: {
+              show: true,
+              text: "Office 365 <em>(online)</em>"
+            },
+            outlook: {
+              show: true,
+              text: "Outlook"
+            },
+            outlookcom: {
+              show: true,
+              text: "Outlook.com <em>(online)</em>"
+            },
+            yahoo: {
+              show: true,
+              text: "Yahoo <em>(online)</em>"
+            },
+            facebook: {
+              show: true,
+              text: "Facebook"
+            }
+          });
+        };
+      </script>
+
+
+    <!-- ANIMACIONES -->
+     <!-- Flores -->
+      <!-- Hoja Izquierda Superior-->
+     <script>
+        var animation = lottie.loadAnimation({
+          container: document.getElementById('portada-flor-izq-sup'), // ID del contenedor
+          renderer: 'svg', // Renderizar en SVG
+          loop: true, // Repetir en bucle
+          autoplay: true, // Iniciar automáticamente
+          path: 'img/json_hojas01.json' // Ruta del archivo JSON de la animación
+        });
+    </script>
+    <!-- Hoja Derecha Inferior-->
+    <script>
+        var animation = lottie.loadAnimation({
+          container: document.getElementById('portada-flor-der-inf'), // ID del contenedor
+          renderer: 'svg', // Renderizar en SVG
+          loop: true, // Repetir en bucle
+          autoplay: true, // Iniciar automáticamente
+          path: 'img/json_hojas02.json' // Ruta del archivo JSON de la animación
+        });
+    </script>
+<!-- Hoja Izquierda Inferior-->
+    <script>
+        var animation = lottie.loadAnimation({
+          container: document.getElementById('portada-flor-izq-inf'), // ID del contenedor
+          renderer: 'svg', // Renderizar en SVG
+          loop: true, // Repetir en bucle
+          autoplay: true, // Iniciar automáticamente
+          path: 'img/json_hojas03.json' // Ruta del archivo JSON de la animación
+        });
+    </script>
+
+    <!-- Cuenta regresiva -->
+    <script>
+        var animation = lottie.loadAnimation({
+          container: document.getElementById('cuenta-regresiva'), // ID del contenedor
+          renderer: 'svg', // Renderizar en SVG
+          loop: true, // Repetir en bucle
+          autoplay: true, // Iniciar automáticamente
+          path: 'img/json_hojas03.json' // Ruta del archivo JSON de la animación
+        });
+    </script>
+
+    <!-- Musica -->
+    <script>
+        var animation = lottie.loadAnimation({
+          container: document.getElementById('fiesta'), // ID del contenedor
+          renderer: 'svg', // Renderizar en SVG
+          loop: true, // Repetir en bucle
+          autoplay: true, // Iniciar automáticamente
+          path: 'img/img_musica.json' // Ruta del archivo JSON de la animación
+        });
+    </script>
+
+        <!-- Vestimenta -->
+        <script>
+            var animation = lottie.loadAnimation({
+              container: document.getElementById('anim-vestuario'), // ID del contenedor
+              renderer: 'svg', // Renderizar en SVG
+              loop: true, // Repetir en bucle
+              autoplay: true, // Iniciar automáticamente
+              path: 'img/vestuario.json' // Ruta del archivo JSON de la animación
+            });
+        </script>
+
+        <!-- Tips Notas -->
+        <script>
+            var animation = lottie.loadAnimation({
+              container: document.getElementById('anim-tips'), // ID del contenedor
+              renderer: 'svg', // Renderizar en SVG
+              loop: true, // Repetir en bucle
+              autoplay: true, // Iniciar automáticamente
+              path: 'img/tips.json' // Ruta del archivo JSON de la animación
+            });
+        </script>
+
+        <!-- Tips Regalos -->
+        <script>
+            var animation = lottie.loadAnimation({
+              container: document.getElementById('anim-regalos'), // ID del contenedor
+              renderer: 'svg', // Renderizar en SVG
+              loop: true, // Repetir en bucle
+              autoplay: true, // Iniciar automáticamente
+              path: 'img/img_regalo.json' // Ruta del archivo JSON de la animación
+            });
+        </script>
+            <script>
+            var animation = lottie.loadAnimation({
+              container: document.getElementById('anim-regalos-2'), // ID del contenedor
+              renderer: 'svg', // Renderizar en SVG
+              loop: true, // Repetir en bucle
+              autoplay: true, // Iniciar automáticamente
+              path: 'img/img_regalo.json' // Ruta del archivo JSON de la animación
+            });
+        </script>
+
+        <!-- Tips Regalos -->
+        <script>
+            var animation = lottie.loadAnimation({
+              container: document.getElementById('regalos-flor-der'), // ID del contenedor
+              renderer: 'svg', // Renderizar en SVG
+              loop: true, // Repetir en bucle
+              autoplay: true, // Iniciar automáticamente
+              path: 'img/json_hojas04.json' // Ruta del archivo JSON de la animación
+            });
+        </script>
+
+        
+        <!-- Tips Icono musica -->
+        <script>
+            var animation = lottie.loadAnimation({
+              container: document.getElementById('.music-anim-icon'), // ID del contenedor
+              renderer: 'svg', // Renderizar en SVG
+              loop: true, // Repetir en bucle
+              autoplay: true, // Iniciar automáticamente
+              path: 'img/music-player-icon.json' // Ruta del archivo JSON de la animación
+            });
+        </script>
+
+</body>
+</html>
