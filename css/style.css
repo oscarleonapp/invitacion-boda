@@ -1904,3 +1904,9 @@ footer p a:hover{
   border-radius: 50%;
   padding: 15px;
 }
+@media (max-width: 768px) {
+  .content-portada {
+      width: 100%; /* Ajusta el ancho completo en móviles */
+  }
+}
+
