@@ -9,6 +9,6 @@ function support_format_webp() {
 
 // Cambiar la imagen de fondo según soporte WebP
 window.onload = function () {
-  var imageParallax = support_format_webp() ? 'source/img/karenyoscar.webp' : 'source/img/karenyoscar.jpg';
+  var imageParallax = support_format_webp() ? 'source/img/iglesia.webp' : 'source/img/iglesia.jpeg';
   document.querySelector('.portada').style.backgroundImage = `url(${imageParallax})`;
 };

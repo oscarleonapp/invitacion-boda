@@ -834,7 +834,7 @@ section.fiesta .item-fiesta .hojas-musica{
 
 
 section.regalos{
-  background: url('../img/img_texturaFondo.jpg') left top repeat var(--color-4);
+  /* background: url('../img/') left top repeat var(--color-4); */
   padding-top: 14%;
   position: relative;
   padding-bottom: 10%
@@ -1873,3 +1873,34 @@ footer p a:hover{
         width: 74px;
         height: 74px;
       }
+
+      
+    /* Galeria */
+    /* Ajustar el espacio entre las imágenes */
+.carousel-item .col-6 {
+  padding: 5px;
+}
+
+/* Ajustar la altura de las imágenes para mantener el aspecto correcto */
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cambiar el color de los indicadores */
+.carousel-indicators li {
+  background-color: #81948b;
+}
+
+/* Cambiar el color de los indicadores activos */
+.carousel-indicators .active {
+  background-color: #81948b;
+}
+
+/* Cambiar el color de los botones de control */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #81948b;
+  border-radius: 50%;
+  padding: 15px;
+}

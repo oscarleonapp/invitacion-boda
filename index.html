@@ -7,8 +7,8 @@
 
     <!-- Importando CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
-     <link rel="stylesheet" href="css/slick.css">
-     <link rel="stylesheet" href="css/slick-theme.css">
+     <!-- <link rel="stylesheet" href="css/slick.css"> -->
+     <!-- <link rel="stylesheet" href="css/slick-theme.css"> -->
      <link rel="stylesheet" href="css/jquery.fancybox.min.css">
      <link rel="stylesheet" href="css/addEvent.css">
      <link rel="stylesheet" href="css/style.css">
@@ -204,151 +204,204 @@
         </div>
     </section>
      <!-- End cuenta regresiva -->
-
-     <!-- Ceremonia y fiesta -->
-     <section class="ceremonia-fiesta">
-        <div class="ceremonia-fiesta-flor-der"></div>
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-6 col-ceremonia text-center">
-
-                    <div class="anim-anillos">
-                        <div id="anim-anillos"></div>
-                    </div>
-                    <script>
-                        var animation = lottie.loadAnimation({
-                          container: document.getElementById('anim-anillos'), // ID del contenedor
-                          renderer: 'svg', // Renderizar en SVG
-                          loop: true, // Repetir en bucle
-                          autoplay: true, // Iniciar automáticamente
-                          path: 'source/img/animaciones/img_ceremonia.json' // Ruta del archivo JSON de la animación
-                        });
-                      </script>
-
-                    <br>
-                    <h3>Ceremonia</h3>
-                    <div class="info-col">
-                        <div class="info-box">
-                            <h6>Día</h6>
-                            <p>Sábado 05 de octubre 2024 - 17hs</p>
-                            <a href="#" class="boton addeventatc">
-                                <span class="nameBtn">Agendar</span>
-                                <span class="start">2024-10-05 17:00:00</span>
-                                <span class="end">2024-10-05 17:00:00</span>
-                                <span class="timezone">America/Guatemala</span>
-                                <span class="title">Boda de Karen y Oscar</span>
-                            </a>
-                        </div>
-                        <div class="info-box">
-                            <h6>Lugar</h6>
-                            <p>Cabaña Suiza</p>
-                            <a href="#" data-evento="Ceremonia" class="boton confirmar-asistencia">Confirmar
-                                asistencia</a>
-                        </div>
-                        <div class="info-box">
-                            <h6>Dirección</h6>
-                            <p>Km. 20.8 Carretera a San Lucas Sacatepéquez, Mixco Guatemala, C.A.</p>
-                            <a href="#" data-evento="Ceremonia" class="boton modal-como-llegar">¿Cómo llegar?</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class=" col-md-6 col-fiesta text-center">
-
-                    <div class="anim-fiesta"></div>
-
-                    <br>
-
-                    <h3>
-                        Fiesta </h3>
-
-                    <div class="info-col">
-
-                        <div class="info-box">
-                            <h6>Día</h6>
-                            <p>Sábado 05 de octubre 2024 - 20hs</p>
-                            <a href="#" class="boton addeventatc">
-                                <span class="nameBtn">Agendar</span>
-
-                                <span class="start">2024-10-05 17:00:00</span>
-                                <span class="end">2024-10-05 17:00:00</span>
-                                <span class="timezone">America/Guatemala</span>
-                                <span class="title">Boda de Karen y Oscar</span>
-                            </a>
-                        </div>
-
-                        <div class="info-box">
-                            <h6>Lugar</h6>
-                            <p>Salon de fiestas Avril</p>
-                            <a href="#" data-evento="Fiesta" class="boton confirmar-asistencia">Confirmar asistencia</a>
-                        </div>
-
-                        <div class="info-box">
-                            <h6>Dirección</h6>
-                            <p>Av. Los Reartes 12 - Guatemala</p>
-                            <a href="#" data-evento="Fiesta" class="boton modal-como-llegar">¿Cómo llegar?</a>
-                        </div>
-
-                    </div>
-
-                </div> -->
-
-            </div>
+<!-- Ceremonia y fiesta -->
+<section class="ceremonia-fiesta">
+  <div class="ceremonia-fiesta-flor-der"></div>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-6 col-ceremonia text-center d-flex flex-column justify-content-center align-items-center">
+        <div class="anim-anillos">
+          <div id="anim-anillos"></div>
         </div>
-    </section>
+        <script>
+          var animation = lottie.loadAnimation({
+            container: document.getElementById('anim-anillos'), // ID del contenedor
+            renderer: 'svg', // Renderizar en SVG
+            loop: true, // Repetir en bucle
+            autoplay: true, // Iniciar automáticamente
+            path: 'source/img/animaciones/img_ceremonia.json' // Ruta del archivo JSON de la animación
+          });
+        </script>
+
+        <br>
+        <h3>Ceremonia y Fiesta</h3>
+        <div class="info-col">
+          <div class="info-box">
+            <h6>Día</h6>
+            <p>Sábado 05 de octubre 2024 - 17hs</p>
+            <a href="#" class="boton addeventatc">
+              <span class="nameBtn">Agendar</span>
+              <span class="start">2024-10-05 17:00:00</span>
+              <span class="end">2024-10-05 17:00:00</span>
+              <span class="timezone">America/Guatemala</span>
+              <span class="title">Boda de Karen y Oscar</span>
+            </a>
+          </div>
+          <div class="info-box">
+            <h6>Lugar</h6>
+            <p>Cabaña Suiza</p>
+              <!-- Sección del video -->
+              <div class="w-100 mt-4">
+                <video width="100%" controls>
+                  <source src="source/video/tu_video.mp4" type="video/mp4">
+                  Tu navegador no soporta el elemento de video.
+                </video>
+              </div>
+            <a href="#" data-evento="Ceremonia" class="boton confirmar-asistencia">Confirmar asistencia</a>
+          </div>
+          <div class="info-box">
+            <h6>Dirección</h6>
+            <p>Km. 20.8 Carretera a San Lucas Sacatepéquez, Mixco Guatemala, C.A.</p>
+
+            <!-- Imagen responsive y con clic para agrandar -->
+            <img src="source/img/ubicacion.JPG" alt="Ubicación" class="img-fluid img-thumbnail" onclick="openImageModal(this)">
+
+            <a href="https://www.google.com/maps/dir//Pan-American+Highway+K+20.8,+Mixco/@14.6172077,-90.7004574,33653m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x85890a8b7db5ce35:0x8d4679e2513b9bbb!2m2!1d-90.6180556!2d14.6172222?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D" class="boton modal-como-llegar" target="_blank">¿Cómo llegar?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal para visualizar la imagen -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">Cabaña Suiza</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="modalImage" class="img-fluid" alt="Imagen ampliada">
+      </div>
+      <div class="modal-footer">
+        <!-- Botón de descarga -->
+        <a id="downloadImage" href="#" download class="boton confirmar-asistencia">Descargar Imagen</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</section>
+
+<section class="galeria">
+
+
+  <div class="container">
+
+
+    <div class="row text-center d-flex justify-content-center align-items-center">
+
+      <div class="content-galeria">
+
+        <h2 class="title">Nuestra Historia de Amor</h2>
+        <p class="subtitle">Un minuto, un segundo, un instante que queda en la eternidad</p>
+
+        <div class="anim-galeria" id="anim-galeria"></div>
+        <script>
+          var animation = lottie.loadAnimation({
+            container: document.getElementById('anim-galeria'), // ID del contenedor
+            renderer: 'svg', // Renderizar en SVG
+            loop: true, // Repetir en bucle
+            autoplay: true, // Iniciar automáticamente
+            path: 'source/img/animaciones/corazon-3.json' // Ruta del archivo JSON de la animación
+          });
+        </script>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="content-fotos">
+
+    <div class="shadow-left"></div>
+    <div class="shadow-right"></div>
+
+    <div class="carrusel slick-initialized slick-slider slick-dotted">
+
+  </div>
+</section>
       <!-- End Ceremonia y fiesta -->
-
       <!-- Galeria -->
-      <section class="galeria">
-        <div class="container">
-            <div class="row text-center d-flex justify-content-center align-items-center">
-                <div class="content-galeria">
-                    <h2 class="title">Retratos de Nuestro Amor</h2>
-                    <p class="subtitle">Un minuto, un segundo, un instante que queda en la eternidad</p>
-                    <div class="anim-galeria"></div>
-                </div>
-            </div>
-        </div>
-        <div class="content-fotos">
-            <div class="shadow-left"></div>
-            <div class="shadow-right"></div>
-            <div class="carrusel">
-                <!-- Impmrimo el bloque con la imagen -->
-                <div>
-                    <div class="polaroid">
-                        <a href="source/img/galeria/karenyoscar.jpg" data-fancybox="galeria">
-                            <img src="source/img/galeria/karenyoscar.jpg" alt="">
-                        </a>
+      <div id="responsiveCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicadores -->
+        <ol class="carousel-indicators">
+            <li data-target="#responsiveCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#responsiveCarousel" data-slide-to="1"></li>
+            <li data-target="#responsiveCarousel" data-slide-to="2"></li>
+        </ol>
+    
+        <!-- Slides -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-6">
+                        <img src="source/img/galeria/karenyoscar.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 1" onclick="openModal(this)">
                     </div>
-                </div>
-                <!-- Impmrimo el bloque con la imagen -->
-                <div>
-                    <div class="polaroid">
-                        <a href="source/img/galeria/karenyoscar.jpg" data-fancybox="galeria">
-                            <img src="source/img/galeria/karenyoscar.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <!-- Impmrimo el bloque con la imagen -->
-                <div>
-                    <div class="polaroid">
-                        <a href="source/img/galeria/karenyoscar.jpg" data-fancybox="galeria">
-                            <img src="source/img/galeria/karenyoscar.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <!-- Impmrimo el bloque con la imagen -->
-                <div>
-                    <div class="polaroid">
-                        <a href="source/img/galeria/karenyoscar.jpg" data-fancybox="galeria">
-                            <img src="source/img/galeria/karenyoscar.jpg" alt="">
-                        </a>
+                    <div class="col-6">
+                        <img src="source/img/galeria/karenyoscar.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 2" onclick="openModal(this)">
                     </div>
                 </div>
             </div>
+    
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-6">
+                        <img src="source/img/galeria/karenyoscar.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 3" onclick="openModal(this)">
+                    </div>
+                    <div class="col-6">
+                        <img src="source/img/galeria/karenyoscar.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 4" onclick="openModal(this)">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-6">
+                        <img src="source/img/galeria/karenyoscar.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 5" onclick="openModal(this)">
+                    </div>
+                    <div class="col-6">
+                        <img src="source/img/galeria/karenyoscar.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 6" onclick="openModal(this)">
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    
+        <!-- Controles -->
+        <a class="carousel-control-prev" href="#responsiveCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#responsiveCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    
+    <!-- Modal para visualizar imagen -->
+    <div class="modal fade" id="imageModal-gallery" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Boda Karen y Oscar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <img id="modalImage-2" class="img-fluid" alt="Imagen ampliada">
+          </div>
+        </div>
+      </div>
+    </div>
        <!-- End Galeria -->
 
        <!-- Información -->
@@ -484,22 +537,33 @@
     <!-- Sección Instagram con efecto Parallax -->
     <section class="instagram p-5">
       <div class="container">
-          <h2 class="title" style="color: white;">Compartimos este día junto a ti</h2>
-          <p class="subtitle">Comparte tus fotos y videos de este hermoso día con nosotros utilizando el hashtag en Instagram o Facebook</p>
-
-          <div class="w-100">
-              <div class="anim-instagram" id="anim-instagram"></div>
-          </div>
-
-          <div class="w-100">
-              <a target="_blank" href="https://www.instagram.com/" class="hashtag">#bodakarenyoscar</a>
-          </div>
-
-          <br>
-
-          <!-- <a target="_blank" href="https://www.instagram.com/oscarleonapp/" class="boton">Ver en Instagram</a> -->
+        <h2 class="title" style="color: white;">Compartimos este día junto a ti</h2>
+        <p class="subtitle">Comparte tus fotos y videos de este hermoso día con nosotros utilizando el hashtag en Instagram o Facebook</p>
+    
+        <div class="w-100">
+          <div class="anim-instagram" id="anim-instagram"></div>
+          <script>
+            var animation = lottie.loadAnimation({
+              container: document.getElementById('anim-instagram'), // ID del contenedor
+              renderer: 'svg', // Renderizar en SVG
+              loop: true, // Repetir en bucle
+              autoplay: true, // Iniciar automáticamente
+              path: 'img/img_instagram.json' // Ruta del archivo JSON de la animación
+            });
+          </script>
+        </div>
+    
+        <div class="w-100">
+          <a target="_blank" href="https://www.instagram.com/" class="hashtag">#bodakarenyoscar</a>
+        </div>
+    
+        <br>
+  
+    
+        <!-- <a target="_blank" href="https://www.instagram.com/oscarleonapp/" class="boton">Ver en Instagram</a> -->
       </div>
-  </section>
+    </section>
+    
 
   
   <!-- Modal asistencia-->
@@ -787,39 +851,6 @@
         </div>
     </div>
 </div>
-<!-- Modal mapa-->
-<div id="modalMapa" class="modal fade" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-
-            <div class="img-top-modal d-flex justify-content-center align-items-start">
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-
-            </div>
-
-
-            <div class="modal-header">
-
-                <h5 class="modal-title"></h5>
-
-            </div>
-
-            <div class="modal-body">
-                <div id="googleMap"></div>
-            </div>
-
-            <div class="modal-footer">
-                <a class="boton ampliar-mapa" target="_blank" href="#">Ampliar mapa</a>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-
 
 <!-- Modal música -->
 <div class="music-button" id="musicButton">
@@ -848,9 +879,24 @@
                       path: 'source/img/animaciones/corazon-4.json' // Ruta del archivo JSON de la animación
                     });
                   </script>
+                  
           </div>
+          <div class="container">
+            <div class="row">
+                <div class="col-md-12 align-content-center">
+                  <p>Esperamos que puedas asistir y formar parte del inicio de nuestra historia de casados.</p>
+                </div>
+            </div>
+        </div>
+          
       </div>
-
+              <!-- Sección del video -->
+              <div class="w-100 mt-4">
+                <video width="100%" controls>
+                  <source src="source/video/tu_video.mp4" type="video/mp4">
+                  Tu navegador no soporta el elemento de video.
+                </video>
+              </div>
   </div>
 </section>
 <footer>
@@ -867,6 +913,8 @@
 </footer>
 
      <!-- SCRIPTS -->
+      <!-- Galeria -->
+       <script src="js/galeria.js"></script>
 <!-- Musica -->
 <script>
   const audioPlayer = document.getElementById('audioPlayer');
@@ -901,9 +949,9 @@
      <script src="js/jquery-3.5.1.min.js"></script>
      <script src="js/jquery.cookie.js"></script>
      <script src="js/parallax.min.js"></script>
-     <script src="js/popper.min.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/slick.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <!-- <script src="js/slick.min.js"></script> -->
      <script src="js/jquery.fancybox.min.js"></script>
 
      <script src="js/cuenta-regresiva.js"></script>
@@ -1165,44 +1213,6 @@
         });
       </script>
   
-      <!-- Modal como llegar -->
-      <script>
-        // Abrir modal
-        $('body').on('click', 'a.modal-como-llegar', function(e) {
-    
-          e.preventDefault();
-    
-          var evento = $(this).attr('data-evento');
-    
-          if (evento == 'Fiesta') {
-            var titleModalMapa = lang_titleModalMapaFiesta;
-    
-            var latitudMapa = latitudFiesta;
-            var longitudMapa = longitudFiesta;
-          }
-    
-          if (evento == 'Ceremonia') {
-            var titleModalMapa = lang_titleModalMapaCeremonia;
-    
-            var latitudMapa = latitudCeremonia;
-            var longitudMapa = longitudCeremonia;
-          }
-    
-          // Cambio titulo
-          $('#modalMapa .modal-title').text(titleModalMapa);
-    
-          // Genero el link para ampliar mapa
-          $('.ampliar-mapa').attr('href', 'https://www.google.com/maps/search/?api=1&query=' + latitudMapa + ',' + longitudMapa);
-    
-          // Cambio mapa
-          initMap(latitudMapa, longitudMapa);
-    
-          $('#modalMapa').modal({
-            backdrop: 'static'
-          })
-    
-        });
-      </script>
     
       <!-- Instagram parallax -->
       <script>
@@ -1219,9 +1229,9 @@
 
         // Detectar si el navegador soporta WebP
         if (support_format_webp()) {
-            instagramBackground = 'source/img/karenyoscar.webp';
+            instagramBackground = 'source/img/iglesia.webp';
         } else {
-            instagramBackground = 'source/img/karenyoscar.jpg';
+            instagramBackground = 'source/img/iglesia.JPG';
         }
 
         // Asignar la imagen detectada al fondo de la sección Instagram
@@ -1237,170 +1247,7 @@
         });
     </script>
     
-      <!-- Api Maps-->
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_3ZK1od6HtymslnbVFuzpUbMfrCRVqzM&callback=initMap&r=2039649914">
-      </script>
-    
-    
-      <script>
-        // Config map
-        function initMap(latitud = 0, longitud = 0) {
-    
-          var myLatLng = {
-            lat: latitud,
-            lng: longitud
-          };
-    
-          var mapOptions = {
-            // How zoomed in you want the map to start at (always required)
-            zoom: 15,
-            scrollwheel: false,
-            disableDefaultUI: false,
-    
-            // The latitude and longitude to center the map (always required)
-            center: new google.maps.LatLng(latitud, longitud),
-    
-            // How you would like to style the map.
-            // This is where you would paste any style found on Snazzy Maps.
-            styles: [{
-                "featureType": "administrative",
-                "elementType": "labels.text.fill",
-                "stylers": [{
-                  "color": "#6195a0"
-                }]
-              },
-              {
-                "featureType": "landscape",
-                "elementType": "all",
-                "stylers": [{
-                  "color": "#f2f2f2"
-                }]
-              },
-              {
-                "featureType": "landscape",
-                "elementType": "geometry.fill",
-                "stylers": [{
-                  "color": "#ffffff"
-                }]
-              },
-              {
-                "featureType": "poi",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              },
-              {
-                "featureType": "poi.park",
-                "elementType": "geometry.fill",
-                "stylers": [{
-                    "color": "#e6f3d6"
-                  },
-                  {
-                    "visibility": "on"
-                  }
-                ]
-              },
-              {
-                "featureType": "road",
-                "elementType": "all",
-                "stylers": [{
-                    "saturation": -100
-                  },
-                  {
-                    "lightness": 45
-                  },
-                  {
-                    "visibility": "simplified"
-                  }
-                ]
-              },
-              {
-                "featureType": "road.highway",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "simplified"
-                }]
-              },
-              {
-                "featureType": "road.highway",
-                "elementType": "geometry.fill",
-                "stylers": [{
-                    "color": "#f4d2c5"
-                  },
-                  {
-                    "visibility": "simplified"
-                  }
-                ]
-              },
-              {
-                "featureType": "road.highway",
-                "elementType": "labels.text",
-                "stylers": [{
-                  "color": "#4e4e4e"
-                }]
-              },
-              {
-                "featureType": "road.arterial",
-                "elementType": "geometry.fill",
-                "stylers": [{
-                  "color": "#f4f4f4"
-                }]
-              },
-              {
-                "featureType": "road.arterial",
-                "elementType": "labels.text.fill",
-                "stylers": [{
-                  "color": "#787878"
-                }]
-              },
-              {
-                "featureType": "road.arterial",
-                "elementType": "labels.icon",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              },
-              {
-                "featureType": "transit",
-                "elementType": "all",
-                "stylers": [{
-                  "visibility": "off"
-                }]
-              },
-              {
-                "featureType": "water",
-                "elementType": "all",
-                "stylers": [{
-                    "color": "#eaf6f8"
-                  },
-                  {
-                    "visibility": "on"
-                  }
-                ]
-              },
-              {
-                "featureType": "water",
-                "elementType": "geometry.fill",
-                "stylers": [{
-                  "color": "#eaf6f8"
-                }]
-              }
-            ]
-    
-          };
-    
-          var mapElement = document.getElementById('googleMap');
-    
-          var map = new google.maps.Map(mapElement, mapOptions);
-    
-          var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-          });
-    
-        }
-      </script>
+
     
     
       <!-- AddEvent script -->
