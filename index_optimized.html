@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de boda de Karen y Oscar. Encuentra toda la información sobre la ceremonia, fiesta, cómo llegar, y más.">
+    <meta name="keywords" content="boda, Karen y Oscar, ceremonia, fiesta, Guatemala, regalos, confirmación de asistencia">
+    <meta name="author" content="OSCARLEON">
+    <meta name="theme-color" content="#C6D7CF">
+    
+    <title>Boda de Karen y Oscar - 05 Octubre 2024</title>
+
+    <!-- Importando CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/addEvent.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Preconexión para optimización de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Animaciones Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js" async defer></script>
+</head>
+<body>
+
+    <!-- Portada -->
+    <section class="portada p-5">
+        <div class="portada-flor-izq-sup" id="portada-flor-izq-sup"></div>
+        <div class="portada-flor-der-inf" id="portada-flor-der-inf"></div>
+        <div class="portada-flor-izq-inf" id="portada-flor-izq-inf"></div>
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="content-portada text-center">
+                    <!-- Contenido de la portada -->
+                    <div class="box-nombres-fecha-portada">
+                        <span class="fecha">05.10.2024</span>
+                        <h1>Karen <br class="d-md-none"><span>&</span><br class="d-md-none">Oscar</h1>
+                        <div class="line"></div>
+                    </div>
+                    <!-- Mensaje -->
+                    <div class="box-frase-portada">
+                        <p>
+                            <img src="img/comilla-apertura.svg" alt="Comillas de apertura">
+                            No importa lo que pase mañana o el resto de mi vida, ahora soy feliz porque te tengo a ti a mi lado y te amo.
+                            <img src="img/comilla-cierre.svg" alt="Comillas de cierre">
+                        </p>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="flecha-continuar" style="width: 200px; height: 200px;"></div>
+                        </div>
+                    </div>
+                    <!-- Flecha para bajar -->
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div id="flecha-continuar" style="width: 200px; height: 200px;"></div>
+                    </div>
+                    <script>
+                        var animation = lottie.loadAnimation({
+                          container: document.getElementById('flecha-continuar'), // ID del contenedor
+                          renderer: 'svg', // Renderizar en SVG
+                          loop: true, // Repetir en bucle
+                          autoplay: true, // Iniciar automáticamente
+                          path: 'source/img/animaciones/scroll-down-white.json' // Ruta del archivo JSON de la animación
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuenta regresiva -->
+    <section class="cuenta-regresiva">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="box-aros d-flex justify-content-center align-items-center">
+                    <div class="box-circulo text-center">
+                        <span class="falta">Falta</span>
+                        <div id="reloj" class="reloj">
+                            <div id="dias" class="reloj-col">
+                                <span class="number"></span>
+                                <span class="time">días</span>
+                            </div>
+                            <div id="horas" class="reloj-col">
+                                <span class="number"></span>
+                                <span class="time">hs</span>
+                            </div>
+                            <div id="minutos" class="reloj-col">
+                                <span class="number"></span>
+                                <span class="time">min</span>
+                            </div>
+                            <div id="segundos" class="reloj-col no-border">
+                                <span class="number"></span>
+                                <span class="time">seg</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center">
+                            <!-- Corazón animado -->
+                            <div id="corazon-falta" class="corazon-falta"></div>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                  container: document.getElementById('corazon-falta'), 
+                                  renderer: 'svg', 
+                                  loop: true, 
+                                  autoplay: true, 
+                                  path: 'source/img/animaciones/corazon-falta.json' 
+                                });
+                              </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Ceremonia -->
+    <section class="ceremonia-fiesta">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6 text-center d-flex flex-column justify-content-center align-items-center">
+                    <div class="anim-anillos">
+                        <div id="anim-anillos"></div>
+                    </div>
+                    <script>
+                        var animation = lottie.loadAnimation({
+                          container: document.getElementById('anim-anillos'),
+                          renderer: 'svg',
+                          loop: true,
+                          autoplay: true,
+                          path: 'source/img/animaciones/img_ceremonia.json'
+                        });
+                    </script>
+                    <h3>Ceremonia y Fiesta</h3>
+                    <div class="info-col">
+                        <div class="info-box">
+                            <h6>Día</h6>
+                            <p>Sábado 05 de octubre 2024 - 17hs</p>
+                            <a href="#" class="boton addeventatc">
+                                <span class="nameBtn">Agendar</span>
+                                <span class="start">2024-10-05 17:00:00</span>
+                                <span class="end">2024-10-05 17:00:00</span>
+                                <span class="timezone">America/Guatemala</span>
+                                <span class="title">Boda de Karen y Oscar</span>
+                            </a>
+                        </div>
+                        <div class="info-box">
+                            <h6>Lugar</h6>
+                            <p>Cabaña Suiza, Guatemala</p>
+                            <a href="https://www.google.com/maps/dir//Pan-American+Highway+K+20.8,+Mixco" class="boton modal-como-llegar" target="_blank">¿Cómo llegar?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección del video -->
+    <section class="video-seccion">
+        <div class="container">
+            <div class="embed-responsive embed-responsive-16by9">
+                <video class="embed-responsive-item" controls>
+                    <source src="source/video/tu_video.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Desarrollado por <a href="https://fixdate.io/gt/" target="_blank">OSCARLEON</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

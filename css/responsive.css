@@ -526,48 +526,27 @@
 /* Adaptando el tamaño de las imagenes para que abarquen todo el espacio */
 /* Contenedor polaroid */
 /* Contenedor del carrusel */
-.carousel-container {
+.carousel-inner {
   position: relative;
-  max-width: 100%;
-  margin: auto;
-  overflow: hidden;
 }
 
-/* Estilo del carrusel */
-.carousel {
+.carousel-controls {
   display: flex;
-  transition: transform 0.5s ease;
+  justify-content: center;
+  margin-top: 15px;
 }
 
-/* Elementos del carrusel */
-.carousel-item {
-  min-width: 100%;
-  box-sizing: border-box;
+.carousel-control-prev,
+.carousel-control-next {
+  position: static;
+  margin: 0 10px;
+  
 }
 
-.carousel-item img {
-  width: 100%;
-  height: auto;
-}
-
-/* Controles del carrusel */
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000; /* Cambiar color del ícono si es necesario */
   padding: 10px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
+  border-radius: 50%;
 }
 

@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
-    <meta name="description" content="Página de boda de Karen y Oscar. Encuentra toda la información sobre la ceremonia, fiesta, cómo llegar, y más.">
-    <meta name="keywords" content="boda, Karen y Oscar, ceremonia, fiesta, Guatemala, regalos, confirmación de asistencia">
-    <meta name="author" content="OSCARLEON">
-    <meta name="theme-color" content="#C6D7CF">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karen y Oscar</title>
 
     <!-- Importando CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
+     <!-- <link rel="stylesheet" href="css/slick.css"> -->
+     <!-- <link rel="stylesheet" href="css/slick-theme.css"> -->
      <link rel="stylesheet" href="css/jquery.fancybox.min.css">
      <link rel="stylesheet" href="css/addEvent.css">
      <link rel="stylesheet" href="css/style.css">
      <link rel="stylesheet" href="css/responsive.css">
+
+
 
      <!-- Color para el navegador en móvil -->
       <meta name="theme-color" content="#C6D7CF">
@@ -30,13 +28,7 @@
       <!-- Animaciones Lottie -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
 
-
-    <!-- Preconexión para optimización de fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-
 <style>
     /* Estilos para el parallax */
 .portada {
@@ -72,6 +64,41 @@
 
 </style>
 <body>
+
+    <!-- Loader -->
+    <!-- <div class="preloader-area">
+
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="loader"></div>
+        </div>
+
+    </div> -->
+     <!-- End Loader -->
+
+     <!-- Modal para habilitar la música -->
+     <!-- <div id="modalMusica" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body text-center">
+                    <p>Invitación de Boda</p>
+                    <p>
+                        Karen Sayle & Oscar León
+                    </p>
+
+                    <span>La música de fondo es parte de la experiencia</span>
+
+                    <br>
+                    <a class="boton" id="play-music-modal" href="">Ingresar con música</a>
+                    <a class="boton" data-dismiss="modal" aria-label="Close" id="" href="">Ingresar sin música</a>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+      <!-- End modal música -->
+
+
     <!-- Portada -->
     <section class="portada p-5">
         <div class="portada-flor-izq-sup" id="portada-flor-izq-sup"></div>
@@ -220,9 +247,7 @@
         Tu navegador no soporta el elemento de video.
       </video>
     </div>
-            <!-- Botón para abrir el modal de confirmar asistencia -->
-<a href="#" class="boton confirmar-asistencia" data-toggle="modal" data-target="#modalAsistencia">Confirmar asistencia</a>
-
+            <a href="#" data-evento="Ceremonia" class="boton confirmar-asistencia">Confirmar asistencia</a>
           </div>
           <div class="info-box">
             <h6>Dirección</h6>
@@ -543,56 +568,154 @@
 
   
   <!-- Modal asistencia-->
-<!-- Modal confirmar asistencia con Google Forms -->
-<div id="modalAsistencia" class="modal fade" tabindex="-1">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-          <div class="img-top-modal d-flex justify-content-center align-items-start">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-              <div class="white-circle-icon">
-                  <img class="" src="img/img_circuloCeremonia.svg" alt="">
-              </div>
-          </div>
-          <div class="modal-header">
-              <h5 class="modal-title">Confirmar Asistencia</h5>
-          </div>
-          <div class="modal-body">
-              <!-- Incrustación del formulario de Google Forms para confirmar asistencia -->
-              <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
-                  width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-          </div>
-          <div class="modal-footer"></div>
-      </div>
-  </div>
-</div>
+  <div id="modalAsistencia" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
 
-<!-- Modal sugerir canción con Google Forms -->
+        <div class="modal-content">
+
+            <div class="img-top-modal d-flex justify-content-center align-items-start">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="white-circle-icon">
+                    <img class="" src="img/img_circuloCeremonia.svg" alt="">
+                </div>
+
+            </div>
+
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+            </div>
+
+            <div class="modal-body">
+
+
+                <div class="formulario-content">
+
+                    <form id="formAsistencia" action="">
+
+
+                        <div
+                            class="form-group d-flex justify-content-around custom-control custom-radio custom-control-inline">
+                            <div class="form-check">
+                                <input class="form-check-input custom-control-input" type="radio" name="asistencia"
+                                    id="1" value="Si" checked>
+                                <label class="form-check-label custom-control-label" for="1">
+                                    Si! Confirmo </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="custom-control-input" type="radio" name="asistencia" id="2"
+                                    value="No">
+                                <label class="custom-control-label" for="2">
+                                    No puedo :( </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="nombreAsistente" name='nombre'
+                                placeholder="Ingrese su nombre completo">
+                        </div>
+
+
+                        <div class="form-group">
+                            <textarea id="comentariosAsistente" class="form-control" name="comentarios" id=""
+                                rows="2"
+                                placeholder="Ingrese algún dato importante, Ej: Soy vegetariano"></textarea>
+                        </div>
+
+                        <input id="eventoAsistencia" type="hidden" name="evento" value="">
+                        <input type="hidden" name="invitacion" value="">
+                        <input type="hidden" name="token" value="">
+                        <input type="hidden" name="lang" value="es">
+                        <input type="hidden" name="country" value="gt">
+
+                    </form>
+
+                </div>
+
+                <div class="msj-content d-flex flex-column justify-content-center"></div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" id="sendAsistencia" class="boton">Enviar</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- Modal sugerir canción-->
 <div id="modalSugerirCancion" class="modal fade" tabindex="-1">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-          <div class="img-top-modal d-flex justify-content-center align-items-start">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-              <div class="white-circle-icon">
-                  <img class="" src="img/img_circuloCanciones.svg" alt="">
-              </div>
-          </div>
-          <div class="modal-header">
-              <h5 class="modal-title">Sugerir Canción</h5>
-          </div>
-          <div class="modal-body">
-              <!-- Incrustación del formulario de Google Forms -->
-              <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
-                  width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-          </div>
-          <div class="modal-footer"></div>
-      </div>
-  </div>
-</div>
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
 
+            <div class="img-top-modal d-flex justify-content-center align-items-start">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="white-circle-icon">
+                    <img class="" src="img/img_circuloCanciones.svg" alt="">
+                </div>
+
+
+            </div>
+
+
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">Sugerir Canción</h5>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="formulario-content">
+
+                    <form id="formSugerirCancion" action="">
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="nombreSugerencia" name='nombre'
+                                placeholder="Tu nombre">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="descripcionSugerencia" name='descripcion'
+                                placeholder="Nombre de canción y autor">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="linkSugerencia" name='link'
+                                placeholder="Si lo desea ingrese el link de youtube, spotify, etc.">
+                        </div>
+
+
+                        <input type="hidden" name="invitacion" value="">
+                        <input type="hidden" name="token" value="">
+                        <input type="hidden" name="lang" value="es">
+                        <input type="hidden" name="country" value="gt">
+
+                    </form>
+
+                </div>
+
+                <div class="msj-content d-flex flex-column justify-content-center"></div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" id="sendSugerenciaCancion" class="boton">Sugerir canción</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
 <!-- Modal vestuario-->
 <div id="modalVestuario" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
