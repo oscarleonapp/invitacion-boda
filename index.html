@@ -142,7 +142,7 @@
                           renderer: 'svg', // Renderizar en SVG
                           loop: true, // Repetir en bucle
                           autoplay: true, // Iniciar automáticamente
-                          path: 'source/img/animaciones/scroll-down.json' // Ruta del archivo JSON de la animación
+                          path: 'source/img/animaciones/scroll-down-white.json' // Ruta del archivo JSON de la animación
                         });
                     </script>
                     <!--END Flecha para bajar -->
@@ -481,36 +481,27 @@
             </div>
         </section>
     
-    <!-- Instagram-->
-    <section class="instagram">
+    <!-- Sección Instagram con efecto Parallax -->
+    <section class="instagram p-5">
+      <div class="container">
+          <h2 class="title" style="color: white;">Compartimos este día junto a ti</h2>
+          <p class="subtitle">Comparte tus fotos y videos de este hermoso día con nosotros utilizando el hashtag en Instagram o Facebook</p>
 
+          <div class="w-100">
+              <div class="anim-instagram" id="anim-instagram"></div>
+          </div>
 
-        <div class="container">
-            <div class="row text-center d-flex justify-content-center align-items-center">
+          <div class="w-100">
+              <a target="_blank" href="https://www.instagram.com/" class="hashtag">#bodakarenyoscar</a>
+          </div>
 
-                <h2 class="title">Compartimos este día junto a vos</h2>
-                <p class="subtitle">Compartí tus fotos y videos de ese hermoso día</p>
+          <br>
 
-                <div class="w-100">
+          <!-- <a target="_blank" href="https://www.instagram.com/oscarleonapp/" class="boton">Ver en Instagram</a> -->
+      </div>
+  </section>
 
-                    <div class="anim-instagram"></div>
-
-                </div>
-
-                <div class="w-100">
-
-                    <a target="_blank" href="https://www.instagram.com/" class="hashtag">#bodakarenyoscar</a>
-
-                </div>
-
-                <br>
-
-                <a target="_blank" href="https://www.instagram.com/oscarleonapp/" class="boton">Ver en Instagram</a>
-
-            </div>
-        </div>
-    </section>
-
+  
   <!-- Modal asistencia-->
   <div id="modalAsistencia" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -828,18 +819,84 @@
         </div>
     </div>
 </div>
-<!-- Modal cambio de idioma -->
-
-    <div id="controlador-musica">
-        <div id="play-pause-music" data-estado-music="pause" class="music-anim-icon"></div>
-    </div>
-
-    <div id="player-musica-fondo"></div>
 
 
+<!-- Modal música -->
+<div class="music-button" id="musicButton">
+  <lottie-player id="lottie-player" autoplay loop src="img/music-player-icon.json"></lottie-player>
+</div>
+
+<audio id="audioPlayer" src="source/boda.mp3"></audio>
+
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<!-- Footer -->
+<section class="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 col-nombres-footer d-flex justify-content-end align-items-center">
+              <h4>
+                  Karen <span id="corazon-falta-3" style="background-color: white;;"></span>
+                  Oscar </h4>
+                  <script>
+                    var animation = lottie.loadAnimation({
+                      container: document.getElementById('corazon-falta-3'), // ID del contenedor
+                      renderer: 'svg', // Renderizar en SVG
+                      loop: true, // Repetir en bucle
+                      autoplay: true, // Iniciar automáticamente
+                      path: 'source/img/animaciones/corazon-4.json' // Ruta del archivo JSON de la animación
+                    });
+                  </script>
+          </div>
+      </div>
+
+  </div>
+</section>
+<footer>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <p>
+                  Desarrollado por <a href="https://fixdate.io/gt/"
+                      target="_blank">OSCARLEON</a>
+              </p>
+          </div>
+      </div>
+  </div>
+</footer>
 
      <!-- SCRIPTS -->
+<!-- Musica -->
+<script>
+  const audioPlayer = document.getElementById('audioPlayer');
+  const musicButton = document.getElementById('musicButton');
+  const lottiePlayer = document.getElementById('lottie-player');
 
+  let isPlaying = false;
+
+  musicButton.addEventListener('click', () => {
+    if (isPlaying) {
+      audioPlayer.pause();
+      console.log('Pausando música');
+      lottiePlayer.setAttribute('src', 'img/music-player-icon.json');  // Cambia al icono de "reproducción"
+    } else {
+      audioPlayer.play();
+      console.log('Reproduciendo música');
+      lottiePlayer.setAttribute('src', 'img/music-player-icon.json');  // Cambia al icono de "pausa"
+    }
+    isPlaying = !isPlaying;
+  });
+
+  // Añadir eventos para depurar si las animaciones se cargan correctamente
+  lottiePlayer.addEventListener('load', () => {
+    console.log('Animación cargada correctamente');
+  });
+
+  lottiePlayer.addEventListener('error', (e) => {
+    console.error('Error cargando animación:', e);
+  });
+</script>
      <!-- Paralax -->
      <script src="js/jquery-3.5.1.min.js"></script>
      <script src="js/jquery.cookie.js"></script>
@@ -1149,31 +1206,36 @@
     
       <!-- Instagram parallax -->
       <script>
-        // Si el ancho es de Telefono
-        if ($(window).width() < 768) {
-    
-          // Aceptar webp?
-          if (support_format_webp()) {
-            var imageInstagramParallax = 'source/img/karenyoscar.jpg';
-          } else {
-            var imageInstagramParallax = 'img/instagram_mobile.jpg';
-          }
-    
-        } else {
-    
-          // Aceptar webp?
-          if (support_format_webp()) {
-            var imageInstagramParallax = 'img/instagram.webp';
-          } else {
-            var imageInstagramParallax = 'img/instagram.jpg';
-          }
-    
+        function support_format_webp() {
+            var elem = document.createElement('canvas');
+            if (!!(elem.getContext && elem.getContext('2d'))) {
+                // Si es capaz de renderizar WebP
+                return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+            }
+            return false;
         }
-    
-        $('.instagram').parallax({
-          imageSrc: _pathProducto + imageInstagramParallax
+
+        var instagramBackground;
+
+        // Detectar si el navegador soporta WebP
+        if (support_format_webp()) {
+            instagramBackground = 'source/img/karenyoscar.webp';
+        } else {
+            instagramBackground = 'source/img/karenyoscar.jpg';
+        }
+
+        // Asignar la imagen detectada al fondo de la sección Instagram
+        document.querySelector('.instagram').style.backgroundImage = `url(${instagramBackground})`;
+
+        // Animación de Lottie para Instagram
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('anim-instagram'), // ID del contenedor
+            renderer: 'svg', // Renderizar en SVG
+            loop: true, // Repetir en bucle
+            autoplay: true, // Iniciar automáticamente
+            path: 'path/to/your/instagram-animation.json' // Ruta del archivo JSON de la animación
         });
-      </script>
+    </script>
     
       <!-- Api Maps-->
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_3ZK1od6HtymslnbVFuzpUbMfrCRVqzM&callback=initMap&r=2039649914">

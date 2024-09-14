@@ -1808,3 +1808,68 @@ footer p a:hover{
   color:var(--color-1);
   background-color: #fff;
 }
+
+   /* Sección Instagram con Parallax */
+   .instagram {
+    background-size: cover;
+    background-attachment: fixed; /* Efecto parallax */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Ajusta la altura según necesites */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.anim-instagram {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+        /* Capa semitransparente */
+        .instagram::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.4); /* Oscurece ligeramente la imagen */
+          z-index: 1; /* Fondo oscuro detrás del contenido */
+      }
+
+      .music-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.1); /* Oscurece ligeramente la imagen */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        z-index: 1000;
+      }
+  
+      .music-button:hover {
+        background-color: #a7a7a7;
+      }
+  
+      #lottie-player {
+        width: 74px;
+        height: 74px;
+      }
