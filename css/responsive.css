@@ -452,3 +452,73 @@
 }
 
 
+/* Archivo: responsive.css */
+
+/* Para pantallas pequeñas (teléfonos) */
+@media only screen and (max-width: 600px) {
+  .portada {
+      height: 70vh;
+      background-attachment: scroll; /* Desactivar parallax en pantallas pequeñas */
+  }
+
+  .box-nombres-fecha-portada h1 {
+      font-size: 2rem; /* Ajustar tamaño del texto */
+  }
+
+  .box-frase-portada p {
+      font-size: 1rem; /* Reducir tamaño de la frase */
+  }
+
+  /* Ajustar tamaño de las imágenes en la galería */
+  .carrusel img {
+      width: 100%;
+      height: auto;
+  }
+
+  /* Acomodar contenido de la sección "cuenta-regresiva" */
+  .cuenta-regresiva .reloj-col {
+      width: 100%;
+  }
+}
+
+/* Para pantallas medianas (tabletas) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .portada {
+      height: 80vh;
+  }
+
+  .box-nombres-fecha-portada h1 {
+      font-size: 3rem;
+  }
+
+  .box-frase-portada p {
+      font-size: 1.5rem;
+  }
+  
+  /* Ajustar tamaño de las imágenes en la galería */
+  .carrusel img {
+      width: 80%;
+      height: auto;
+  }
+}
+
+/* Para pantallas grandes (laptops y monitores) */
+@media only screen and (min-width: 1025px) {
+  .portada {
+      height: 100vh;
+  }
+
+  .box-nombres-fecha-portada h1 {
+      font-size: 4rem;
+  }
+
+  .box-frase-portada p {
+      font-size: 2rem;
+  }
+
+  /* Ajustar tamaño de las imágenes en la galería */
+  .carrusel img {
+      width: 60%;
+      height: auto;
+  }
+}
