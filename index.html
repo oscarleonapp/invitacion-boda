@@ -492,7 +492,33 @@
 
             <div class="regalos-flor-der" id="regalos-flor-der"></div>
     
-            <div class="container">
+            <div class="container pb-5">
+                <div class="row text-center d-flex justify-content-center align-items-center">
+    
+                    <h2 class="title">Itinerario</h2>
+                    <p class="subtitle">Nuestra ceremonia y fiesta estan programadas de la siguiente manera.</p>
+    
+                    <div class="w-100">
+    
+                        <div class="anim-regalos" id="itinerario" style="width: 110px;"></div>
+                        <script>
+                          var animation = lottie.loadAnimation({
+                            container: document.getElementById('itinerario'), // ID del contenedor
+                            renderer: 'svg', // Renderizar en SVG
+                            loop: true, // Repetir en bucle
+                            autoplay: true, // Iniciar automáticamente
+                            path: 'source/img/animaciones/updated_itinerario.json' // Ruta del archivo JSON de la animación
+                          });
+                        </script>
+                    </div>
+    
+                    <br>
+    
+                    <a href="#" class="boton modal-regalos">Ver itinerario</a>
+    
+                </div>
+            </div>
+                <div class="container py-4">
                 <div class="row text-center d-flex justify-content-center align-items-center">
     
                     <h2 class="title">Regalos</h2>
