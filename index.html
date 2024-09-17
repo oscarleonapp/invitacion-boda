@@ -70,8 +70,63 @@
   height: auto;
 }
 
+ /* Fondo transparente que cubre toda la pantalla */
+ #modalMusica .modal-dialog {
+    width: 100%;
+    max-width: none; /* Permite que el modal ocupe toda la pantalla */
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #modalMusica .modal-content {
+    background-color: rgba(74, 98, 95, 0.9); /* Fondo con transparencia */
+    border: none; /* Sin borde */
+    width: 100%;
+    height: 100%; /* Hace que el modal cubra toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Color del texto en blanco */
+  }
+
+  /* Estilos del cuerpo del modal */
+  #modalMusica .modal-body {
+    text-align: center;
+  }
+
+
+
 </style>
 <body>
+<!-- Modal musica-->
+<!-- Modal musica-->
+<div id="modalMusica" class="modal fade show" tabindex="-1" style="display: block;" aria-modal="true" role="dialog">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <p>Invitación a la boda de Karen & Oscar</p>
+        <span style="color: white;">La música de fondo es parte de la experiencia</span>
+        <br>
+        <a class="boton" id="enterWithMusicButton" href="javascript:void(0)">Ingresar con música</a>
+        <a class="boton" id="enterWithoutMusicButton" href="javascript:void(0)">Ingresar sin música</a>
+
+        <!-- Lottie Player for animation (aparece después de ingresar con música) -->
+        <div class="music-button" id="musicButton" style="display: none;">
+          <lottie-player id="lottie-player" autoplay loop src="img/music-player-icon.json" style="width: 150px; height: 150px;"></lottie-player>
+        </div>
+
+        <!-- Audio player -->
+        <audio id="audioPlayer" src="source/boda.mp3"></audio>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
     <!-- Portada -->
     <section class="portada p-5">
         <div class="portada-flor-izq-sup" id="portada-flor-izq-sup"></div>
@@ -220,7 +275,9 @@
         Tu navegador no soporta el elemento de video.
       </video>
     </div>
+    <br>
             <!-- Botón para abrir el modal de confirmar asistencia -->
+             <p>Nos encantaría verte en nuestra boda y crear juntos recuerdos inolvidables. Por favor, confirma tu asistencia para que podamos tener todo listo para ti.</p>
 <a href="#" class="boton confirmar-asistencia" data-toggle="modal" data-target="#modalAsistencia">Confirmar asistencia</a>
 
           </div>
@@ -317,10 +374,10 @@
           <div class="carousel-item active">
             <div class="row">
               <div class="col-6">
-                <img src="source/img/galeria/karenyoscar.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 1" onclick="openModal(this)">
+                <img src="source/img/galeria/10.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 1" onclick="openModal(this)">
               </div>
               <div class="col-6">
-                <img src="source/img/galeria/karenyoscar.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 2" onclick="openModal(this)">
+                <img src="source/img/galeria/11.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 2" onclick="openModal(this)">
               </div>
             </div>
           </div>
@@ -329,10 +386,10 @@
           <div class="carousel-item">
             <div class="row">
               <div class="col-6">
-                <img src="source/img/galeria/karenyoscar.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 3" onclick="openModal(this)">
+                <img src="source/img/galeria/9.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 3" onclick="openModal(this)">
               </div>
               <div class="col-6">
-                <img src="source/img/galeria/karenyoscar.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 4" onclick="openModal(this)">
+                <img src="source/img/galeria/8.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 4" onclick="openModal(this)">
               </div>
             </div>
           </div>
@@ -341,11 +398,47 @@
           <div class="carousel-item">
             <div class="row">
               <div class="col-6">
-                <img src="source/img/galeria/karenyoscar.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 5" onclick="openModal(this)">
+                <img src="source/img/galeria/7.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 5" onclick="openModal(this)">
               </div>
               <div class="col-6">
-                <img src="source/img/galeria/karenyoscar.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 6" onclick="openModal(this)">
+                <img src="source/img/galeria/6.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 6" onclick="openModal(this)">
               </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-6">
+                <img src="source/img/galeria/5.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 5" onclick="openModal(this)">
+              </div>
+              <div class="col-6">
+                <img src="source/img/galeria/4.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 6" onclick="openModal(this)">
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-6">
+                <img src="source/img/galeria/3.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 5" onclick="openModal(this)">
+              </div>
+              <div class="col-6">
+                <img src="source/img/galeria/2.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 6" onclick="openModal(this)">
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-6">
+                <img src="source/img/galeria/1.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 5" onclick="openModal(this)">
+              </div>
+              <!-- <div class="col-6">
+                <img src="source/img/galeria/2.jpg" class="d-block w-100 img-thumbnail" alt="Imagen 6" onclick="openModal(this)">
+              </div> -->
             </div>
           </div>
         </div>
@@ -418,7 +511,7 @@
 
 
                         <p>
-                            ¿Cuál es la canción que no debe faltar en la playlist de la fiesta? </p>
+                          Ayudamos a completar la lista de canciones; coloca todas las que creas necesarias. </p>
 
                         <a href="#" class="boton sugerir-canción">Sugerir canción</a>
 
@@ -647,8 +740,8 @@
 
             <div class="modal-body">
 
-                <p>Las mujeres deben llevar vestido de noche o fiesta</p>
-                <p>Los hombres deben vestir formal</p>
+                <p>🎩 Hombres y mujeres de gala. 👠</p>
+                <p>Tomar en cuenta que es al aire libre 🥶</p>
 
             </div>
 
@@ -686,9 +779,10 @@
 
             <div class="modal-body">
 
-                <p>El parqueo esta sobre grama</p>
-                <p>Está temporada de lluvia</p>
-                <p>El clima es frío y la fiesta tiene entradas de bastante aire</p>
+                <p>🚗 El parqueo esta sobre grama</p>
+                <p>☔ Está temporada de lluvia</p>
+                <p>🥶 El clima es frío y la fiesta tiene entradas de bastante aire</p>
+                <p>📍 Cada invitado tendrá su # de mesa q podran ubicar a la entrada del salón</p>
 
             </div>
 
@@ -725,11 +819,12 @@
             </div>
 
             <div class="modal-body">
-                <p>Contar con ustedes en nuestra boda es el mejor regalo.</p>
-                <p>Pero si lo desean, pueden hacernos un obsequio
-                    monetario el cual pueden depositar el día de la boda con los sobres que estarán en la mesa de regalos o
-                    bien por transferencia a las siguientes cuentas.
-                </p>
+              <p>
+                Su asistencia a nuestra boda será regalo suficiente. Pero si desean ayudarnos a ahorrar para nuestro futuro, les dejamos los datos de nuestra cuenta bancaria o el día de la boda encontraras un buzón para depositar el sobre. Así mismo, si prefieres un obsequio estaremos agradecidos.
+              </p>
+              <p>
+                Si es depósito o transferencia por favor, envíarnos un mensaje de cariño para que estemos el doble de agradecidos. 
+              </p>
                 <p><strong>Karen Alejandra Ordoñez Sayle</strong>
                     <br>
                     Banco Industrial
@@ -757,11 +852,14 @@
 </div>
 
 <!-- Modal música -->
+<!-- Botón para ingresar con música -->
+<a class="boton" id="enterWithMusicButton" href="javascript:void(0)">Ingresar con música</a>
+
+<!-- Botón de música con animación Lottie (aparece cuando se ingresa con música) -->
+<!-- Botón de música con animación Lottie -->
 <div class="music-button" id="musicButton">
   <lottie-player id="lottie-player" autoplay loop src="img/music-player-icon.json" style="width: 150px; height: 150px;"></lottie-player>
 </div>
-
-<audio id="audioPlayer" src="source/boda.mp3"></audio>
 
 
 
@@ -821,39 +919,68 @@
      <!-- SCRIPTS -->
       <!-- Galeria -->
        <script src="js/galeria.js"></script>
-<!-- Musica -->
+
+       <!-- musica -->
 <script>
-const audioPlayer = document.getElementById('audioPlayer');
-const musicButton = document.getElementById('musicButton');
-const lottiePlayer = document.getElementById('lottie-player');
+  document.addEventListener('DOMContentLoaded', () => {
+    const audioPlayer = document.getElementById('audioPlayer');
+    const musicButton = document.getElementById('musicButton');
+    const enterWithMusicButton = document.getElementById('enterWithMusicButton');
+    const enterWithoutMusicButton = document.getElementById('enterWithoutMusicButton');
+    const lottiePlayer = document.getElementById('lottie-player');
+    const modal = document.getElementById('modalMusica');
+    let isPlaying = false;
 
-let isPlaying = false;
+    // Hide the music button initially
+    musicButton.style.display = 'none';
 
-musicButton.addEventListener('click', () => {
-  if (isPlaying) {
-    audioPlayer.pause();
-    console.log('Pausando música');
-    // Cambia la animación al icono de "reproducción" usando LottiePlayer's `load` method
-    lottiePlayer.load('source/img/animaciones/pause.json');
-  } else {
-    audioPlayer.play();
-    console.log('Reproduciendo música');
-    // Cambia la animación al icono de "pausa" usando LottiePlayer's `load` method
-    lottiePlayer.load('source/img/animaciones/love-music.json');
-  }
-  isPlaying = !isPlaying;
-});
+    // Function to close the modal
+    const closeModal = () => {
+      modal.classList.remove('show');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      modal.removeAttribute('aria-modal');
+      modal.removeAttribute('role');
+    };
 
-// Añadir eventos para depurar si las animaciones se cargan correctamente
-lottiePlayer.addEventListener('load', () => {
-  console.log('Animación cargada correctamente');
-});
+    // Play music and close modal when "Ingresar con música" is clicked
+    enterWithMusicButton.addEventListener('click', () => {
+      audioPlayer.play();
+      isPlaying = true;
+      console.log('Playing music');
+      lottiePlayer.load('img/music-playing-icon.json'); // Change animation to "playing"
+      musicButton.style.display = 'block'; // Show the music button
+      closeModal(); // Close the modal
+    });
 
-lottiePlayer.addEventListener('error', (e) => {
-  console.error('Error cargando animación:', e);
-});
+    // Just close the modal when "Ingresar sin música" is clicked
+    enterWithoutMusicButton.addEventListener('click', () => {
+      console.log('Entered without music');
+      closeModal(); // Close the modal
+    });
 
+    // Toggle play/pause when the music button is clicked
+    musicButton.addEventListener('click', () => {
+      if (isPlaying) {
+        audioPlayer.pause();
+        console.log('Pausing music');
+        lottiePlayer.load('img/music-player-icon.json'); // Change animation to "paused"
+      } else {
+        audioPlayer.play();
+        console.log('Playing music');
+        lottiePlayer.load('img/music-playing-icon.json'); // Change animation to "playing"
+      }
+      isPlaying = !isPlaying;
+    });
+  });
 </script>
+
+      
+      
+  
+        
+       
+  
      <!-- Paralax -->
      <script src="js/jquery-3.5.1.min.js"></script>
      <script src="js/jquery.cookie.js"></script>
