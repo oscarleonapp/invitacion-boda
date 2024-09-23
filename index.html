@@ -232,91 +232,7 @@
         </div>
     </section>
      <!-- End cuenta regresiva -->
-<!-- Ceremonia y fiesta -->
-<section class="ceremonia-fiesta">
-  <div class="ceremonia-fiesta-flor-der"></div>
-  <div class="container">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-md-6 col-ceremonia text-center d-flex flex-column justify-content-center align-items-center">
-        <div class="anim-anillos">
-          <div id="anim-anillos"></div>
-        </div>
-        <script>
-          var animation = lottie.loadAnimation({
-            container: document.getElementById('anim-anillos'), // ID del contenedor
-            renderer: 'svg', // Renderizar en SVG
-            loop: true, // Repetir en bucle
-            autoplay: true, // Iniciar automáticamente
-            path: 'source/img/animaciones/img_ceremonia.json' // Ruta del archivo JSON de la animación
-          });
-        </script>
 
-        <br>
-        <h3>Ceremonia y Fiesta</h3>
-        <div class="info-col">
-          <div class="info-box">
-            <h6>Día</h6>
-            <p>Sábado 05 de octubre 2024 - 17hs</p>
-            <a href="#" class="boton addeventatc">
-              <span class="nameBtn">Agendar</span>
-              <span class="start">2024-10-05 17:00:00</span>
-              <span class="end">2024-10-05 17:00:00</span>
-              <span class="timezone">America/Guatemala</span>
-              <span class="title">Boda de Karen y Oscar</span>
-            </a>
-          </div>
-          <div class="info-box">
-            <h6>Lugar</h6>
-            <p>Cabaña Suiza</p>
-    <!-- Sección del video responsivo -->
-    <div class="mt-4 embed-responsive embed-responsive-16by9">
-      <video class="embed-responsive-item" controls>
-        <source src="source/img/cabana-suiza.mov" type="video/mp4">
-      </video>
-    </div>
-    <br>
-            <!-- Botón para abrir el modal de confirmar asistencia -->
-             <p>Nos encantaría verte en nuestra boda y crear juntos recuerdos inolvidables. Por favor, confirma tu asistencia para que podamos tener todo listo para ti.</p>
-<a href="#" class="boton confirmar-asistencia" data-toggle="modal" data-target="#modalAsistencia">Confirmar asistencia</a>
-
-          </div>
-          <div class="info-box">
-            <h6>Dirección</h6>
-            <p>Km. 20.8 Carretera a San Lucas Sacatepéquez, Mixco Guatemala, C.A.</p>
-
-            <!-- Imagen responsive y con clic para agrandar -->
-            <img src="source/ubicacion.png" alt="Ubicación" class="img-fluid img-thumbnail" onclick="openImageModal(this)">
-            <p>Toque la imagen para descargarla</p>
-            <a href="https://www.google.com/maps/dir//Pan-American+Highway+K+20.8,+Mixco/@14.6172077,-90.7004574,33653m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x85890a8b7db5ce35:0x8d4679e2513b9bbb!2m2!1d-90.6180556!2d14.6172222?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D" class="boton modal-como-llegar" target="_blank">¿Cómo llegar?</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- Modal para visualizar la imagen -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="imageModalLabel">Cabaña Suiza</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body text-center">
-        <img id="modalImage" class="img-fluid" alt="Imagen ampliada">
-      </div>
-      <div class="modal-footer">
-        <!-- Botón de descarga -->
-        <a id="downloadImage" href="#" download class="boton confirmar-asistencia">Descargar Imagen</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-</section>
 
 <section class="galeria">
 
@@ -632,6 +548,92 @@
             </div>
         </section>
     
+<!-- Ceremonia y fiesta -->
+<section class="ceremonia-fiesta">
+  <div class="ceremonia-fiesta-flor-der"></div>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-6 col-ceremonia text-center d-flex flex-column justify-content-center align-items-center">
+        <div class="anim-anillos">
+          <div id="anim-anillos"></div>
+        </div>
+        <script>
+          var animation = lottie.loadAnimation({
+            container: document.getElementById('anim-anillos'), // ID del contenedor
+            renderer: 'svg', // Renderizar en SVG
+            loop: true, // Repetir en bucle
+            autoplay: true, // Iniciar automáticamente
+            path: 'source/img/animaciones/img_ceremonia.json' // Ruta del archivo JSON de la animación
+          });
+        </script>
+
+        <br>
+        <h3>Ceremonia y Fiesta</h3>
+        <div class="info-col">
+          <div class="info-box">
+            <h6>Día</h6>
+            <p>Sábado 05 de octubre 2024 - 17hs</p>
+            <a href="#" class="boton addeventatc">
+              <span class="nameBtn">Agendar</span>
+              <span class="start">2024-10-05 17:00:00</span>
+              <span class="end">2024-10-05 17:00:00</span>
+              <span class="timezone">America/Guatemala</span>
+              <span class="title">Boda de Karen y Oscar</span>
+            </a>
+          </div>
+          <div class="info-box">
+            <h6>Lugar</h6>
+            <p>Cabaña Suiza</p>
+    <!-- Sección del video responsivo -->
+    <div class="mt-4 embed-responsive embed-responsive-16by9">
+      <video class="embed-responsive-item" controls>
+        <source src="source/img/cabana-suiza.mov" type="video/mp4">
+      </video>
+    </div>
+    <br>
+            <!-- Botón para abrir el modal de confirmar asistencia -->
+             <p>Nos encantaría verte en nuestra boda y crear juntos recuerdos inolvidables. Por favor, confirma tu asistencia para que podamos tener todo listo para ti.</p>
+<a href="#" class="boton confirmar-asistencia" data-toggle="modal" data-target="#modalAsistencia">Confirmar asistencia</a>
+
+          </div>
+          <div class="info-box">
+            <h6>Dirección</h6>
+            <p>Km. 20.8 Carretera a San Lucas Sacatepéquez, Mixco Guatemala, C.A.</p>
+
+            <!-- Imagen responsive y con clic para agrandar -->
+            <img src="source/ubicacion.png" alt="Ubicación" class="img-fluid img-thumbnail" onclick="openImageModal(this)">
+            <p>Toque la imagen para descargarla</p>
+            <a href="https://www.google.com/maps/dir//Pan-American+Highway+K+20.8,+Mixco/@14.6172077,-90.7004574,33653m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x85890a8b7db5ce35:0x8d4679e2513b9bbb!2m2!1d-90.6180556!2d14.6172222?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D" class="boton modal-como-llegar" target="_blank">¿Cómo llegar?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal para visualizar la imagen -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">Cabaña Suiza</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="modalImage" class="img-fluid" alt="Imagen ampliada">
+      </div>
+      <div class="modal-footer">
+        <!-- Botón de descarga -->
+        <a id="downloadImage" href="#" download class="boton confirmar-asistencia">Descargar Imagen</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</section>
+
     <!-- Sección Instagram con efecto Parallax -->
     <section class="instagram p-5">
       <div class="container">
